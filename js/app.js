@@ -58,6 +58,15 @@ function setupNav() {
     menuToggle.setAttribute('aria-expanded', isOpen);
   });
 
+  // Logo / brand link: behave like the 'inicio' nav button
+  const brandLink = document.querySelector('.brand-link');
+  if (brandLink) {
+    brandLink.addEventListener('click', e => {
+      e.preventDefault();
+      goToSection('inicio');
+    });
+  }
+
   // Cerrar menú al hacer clic fuera
   document.addEventListener('click', e => {
     if (!e.target.closest('.header')) nav.classList.remove('open');
@@ -124,10 +133,31 @@ function applyContrast() {
 let toastTimer;
 function showToast(msg) {
   const t = document.getElementById('toast');
+  if (!t) return;
+  // If no message provided, hide the toast and clear content
+  if (!msg) {
+    t.textContent = '';
+    t.classList.remove('show');
+    t.setAttribute('aria-hidden', 'true');
+    // wait for the hide transition, then remove from flow
+    setTimeout(() => {
+      t.style.display = 'none';
+    }, 360);
+    return;
+  }
+
   t.textContent = msg;
+  t.setAttribute('aria-hidden', 'false');
+  // ensure element is in the flow so transition can run
+  t.style.display = 'block';
+  // force reflow then add class to trigger transition
+  void t.offsetWidth;
   t.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+  toastTimer = setTimeout(() => {
+    t.classList.remove('show');
+    t.setAttribute('aria-hidden', 'true');
+  }, 2200);
 }
 
 /* ============================================================
