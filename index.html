@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Material educativo interactivo del programa de Alfabetización Tecnológica Nivel 2 — Alcaldía de Chacao · UCV">
+<title>Alfabetización Tecnológica · Nivel 2 · Material Educativo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,30..100,0..1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Skip nav link (accesibilidad) -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- ============================== HEADER ============================== -->
+<header class="header" role="banner">
+  <div class="header-inner">
+    <div class="brand" role="img" aria-label="Alfabetización Tecnológica — Material Educativo">
+      <img src="assets/chacao.png" alt="" class="brand-icon" aria-hidden="true">
+      <div class="brand-text">
+        Alfabetización Tecnológica
+        <small>Nivel 2 · SC-FC-UCV · 2026</small>
+      </div>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú de navegación">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+      <button class="nav-btn active" data-section="inicio" aria-current="page">Inicio</button>
+      <button class="nav-btn" data-section="temario">Temario</button>
+      <button class="nav-btn" data-section="curiosidades">Curiosidades</button>
+      <button class="nav-btn" data-section="tips">Tips</button>
+      <button class="nav-btn" data-section="faq">Preguntas</button>
+      <button class="nav-btn" data-section="test">Test</button>
+      <button class="nav-btn" data-section="glosario">Glosario</button>
+      <button class="nav-btn" data-section="cartel">Cartel</button>
+    </nav>
+
+    <div class="header-tools" role="toolbar" aria-label="Herramientas de accesibilidad">
+      <button class="tool-btn" id="font-decrease" aria-label="Reducir tamaño de texto" title="Texto más pequeño">A−</button>
+      <button class="tool-btn" id="font-increase" aria-label="Aumentar tamaño de texto" title="Texto más grande">A+</button>
+      <button class="tool-btn" id="contrast-toggle" aria-label="Activar modo alto contraste" aria-pressed="false" title="Alto contraste">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18V4a8 8 0 0 1 0 16z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== MAIN ============================== -->
+<main id="main-content">
+
+  <!-- ---- INICIO ---- -->
+  <section class="section active" id="section-inicio" aria-label="Inicio">
+
+    <div class="hero">
+      <div class="hero-eyebrow" aria-hidden="true">Programa de Servicio Comunitario · UCV</div>
+      <h1>Aprende <em>tecnología</em><br>sin miedo.</h1>
+      <p class="hero-sub">
+        Material educativo interactivo del programa de Alfabetización Tecnológica Nivel 2, desarrollado en la Alcaldía de Chacao como proyecto de Servicio Comunitario — Facultad de Ciencias, UCV.
+      </p>
+      <div class="hero-ctas">
+        <button class="cta cta-primary" data-goto="temario">
+          Empezar a aprender
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="cta cta-secondary" data-goto="test">Hacer un test</button>
+      </div>
+
+      <div class="hero-instituciones" role="region" aria-label="Instituciones participantes">
+        <span class="hero-inst-label">Una iniciativa de</span>
+        <div class="hero-logos">
+          <img src="assets/uni.png"    alt="Universidad Central de Venezuela" class="hero-logo hero-logo--ucv">
+          <div class="hero-logos-sep" aria-hidden="true"></div>
+          <img src="assets/facu.png"   alt="Facultad de Ciencias UCV"         class="hero-logo hero-logo--facu">
+          <div class="hero-logos-sep" aria-hidden="true"></div>
+          <img src="assets/escuela.png" alt="Escuela de Computación UCV"      class="hero-logo hero-logo--escuela">
+          <div class="hero-logos-sep" aria-hidden="true"></div>
+          <img src="assets/chacao.png" alt="Alcaldía de Chacao"               class="hero-logo hero-logo--chacao">
+        </div>
+      </div>
+    </div>
+
+    <div class="stats" id="stats-bar" role="region" aria-label="Estadísticas del curso"></div>
+
+    <div class="inicio-cards" id="inicio-cards" role="list"></div>
+
+  </section>
+
+  <!-- ---- TEMARIO ---- -->
+  <section class="section" id="section-temario" aria-label="Temario completo">
+    <h2 class="section-title">Temario completo</h2>
+    <p class="section-sub">Diecisiete módulos que recorren todo el programa: desde encender el computador hasta entender los Bots y tu Huella Digital. Toca cada tarjeta para ver el contenido detallado.</p>
+    <div class="progress-banner" id="progress-banner" role="status" aria-live="polite"></div>
+    <div class="modulos" id="modulos-container" role="list"></div>
+
+    <div class="laminas-panel" aria-label="Láminas del curso">
+      <div class="laminas-header">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <h3>Láminas del curso</h3>
+      </div>
+      <p class="laminas-sub">Documentos PDF originales utilizados en clases — disponibles para descargar o consultar.</p>
+      <ul class="laminas-list">
+        <li><a class="lamina-link" href="laminas/Modulo%201%20Nivel%202%20SC.pdf%20(1).pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Módulo 1 — Office: Word, Excel, PowerPoint
+        </a></li>
+        <li><a class="lamina-link" href="laminas/NIVEL%202_CLASES.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Contraseñas e Inteligencia Artificial
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Entendiendo%20el%20WiFi%20en%20Casa.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Entendiendo el WiFi en Casa
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Entendiendo%20el%20Modo%20Inc%C3%B3gnito%20para%20Adultos%20Mayores.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Modo Incógnito
+        </a></li>
+        <li><a class="lamina-link" href="laminas/La%20Internet%20de%20las%20Cosas%20(IoT).pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Internet de las Cosas (IoT)
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Introducci%C3%B3n%20al%20E-commerce%20Seguro.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Introducción al E-commerce Seguro
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Todo%20sobre%20Virus%20Inform%C3%A1ticos%20(1).pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Todo sobre Virus Informáticos
+        </a></li>
+        <li><a class="lamina-link" href="laminas/La%20Revoluci%C3%B3n%20de%20los%20Bots.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          La Revolución de los Bots
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Obsolescencia%20Programada.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Obsolescencia Programada
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Publicidad%20Digital%20para%20Adultos%20Mayores.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Publicidad Digital
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Huella%20Digital%20y%20Derecho%20al%20Olvido.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Huella Digital y Derecho al Olvido
+        </a></li>
+        <li><a class="lamina-link" href="laminas/Gu%C3%ADa%20de%20Limpieza%20Total%20del%20Celular.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Guía de Limpieza Total del Celular
+        </a></li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ---- CURIOSIDADES ---- -->
+  <section class="section" id="section-curiosidades" aria-label="Datos curiosos y juego">
+    <h2 class="section-title">Datos que te sorprenderán</h2>
+    <p class="section-sub">Estadísticas reales del mundo digital que quizás no conocías — y un juego para poner a prueba lo que sabes.</p>
+
+    <div class="tabs-bar" role="tablist" aria-label="Secciones de Curiosidades">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="datos" aria-controls="tab-datos">📊 Datos Curiosos</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="verdad-mito" aria-controls="tab-verdad-mito">🎮 Verdad o Mito</button>
+    </div>
+
+    <div id="tab-datos" role="tabpanel" aria-label="Datos curiosos">
+      <div class="filtros-curiosidades" role="group" aria-label="Filtrar por tema"></div>
+      <div class="curiosidades-grid" id="curiosidades-container"></div>
+    </div>
+
+    <div id="tab-verdad-mito" role="tabpanel" aria-label="Juego Verdad o Mito" hidden>
+      <div class="verdad-mito-intro">
+        <p>¿Es esto verdad o es un mito? Toca cada tarjeta para descubrirlo.</p>
+        <div class="vm-score" id="vm-score" aria-live="polite"></div>
+      </div>
+      <div class="vm-grid" id="vm-container" role="list"></div>
+      <div class="vm-reset" id="vm-reset" hidden>
+        <button class="cta cta-primary" id="vm-reset-btn">Volver a jugar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- TIPS ---- -->
+  <section class="section" id="section-tips" aria-label="Tips prácticos">
+    <h2 class="section-title">30 Tips que cambiarán tu vida digital</h2>
+    <p class="section-sub">Las recomendaciones más importantes del programa, condensadas para que las apliques desde hoy.</p>
+    <div class="tips-filtros" role="group" aria-label="Filtrar tips"></div>
+    <div id="tips-container" role="list"></div>
+  </section>
+
+  <!-- ---- FAQ ---- -->
+  <section class="section" id="section-faq" aria-label="Preguntas frecuentes">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <p class="section-sub">Las dudas más comunes que surgieron durante el programa, resueltas con claridad y sin tecnicismos.</p>
+
+    <div class="faq-categoria" role="group" aria-label="Filtrar por categoría">
+      <button class="cat-btn active" data-cat="todas">Todas</button>
+      <button class="cat-btn" data-cat="basico">Lo Básico</button>
+      <button class="cat-btn" data-cat="seguridad">Seguridad</button>
+      <button class="cat-btn" data-cat="internet">Internet y Redes</button>
+      <button class="cat-btn" data-cat="ia">IA y Futuro</button>
+      <button class="cat-btn" data-cat="celular">Celular</button>
+    </div>
+
+    <div class="search-wrap" role="search">
+      <label for="faq-search" class="sr-only">Buscar en preguntas frecuentes</label>
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" class="search-input" id="faq-search" placeholder="Busca una pregunta..." autocomplete="off">
+    </div>
+
+    <div class="faq-list" id="faq-list" role="list" aria-live="polite"></div>
+  </section>
+
+  <!-- ---- TEST ---- -->
+  <section class="section" id="section-test" aria-label="Tests interactivos">
+    <h2 class="section-title">Test Interactivo</h2>
+    <p class="section-sub">Pon a prueba lo aprendido. Cada respuesta te explica por qué es correcta o incorrecta. ¡No te preocupes si te equivocas!</p>
+
+    <div class="test-wrap">
+      <div id="test-seleccion"></div>
+      <div class="test-progreso" id="test-progreso" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ---- GLOSARIO ---- -->
+  <section class="section" id="section-glosario" aria-label="Glosario tecnológico">
+    <h2 class="section-title">Glosario Tecnológico</h2>
+    <p class="section-sub">40 términos del mundo digital explicados en palabras simples. Búscalos por letra o por nombre.</p>
+
+    <div class="search-wrap" role="search">
+      <label for="glosario-search" class="sr-only">Buscar término en glosario</label>
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" class="search-input" id="glosario-search" placeholder="Busca un término..." autocomplete="off">
+    </div>
+
+    <div class="az-filter" id="az-filter" role="group" aria-label="Filtrar por letra"></div>
+    <div class="glosario-grid" id="glosario-container" role="list" aria-live="polite"></div>
+  </section>
+
+  <!-- ---- CARTEL ---- -->
+  <section class="section" id="section-cartel" aria-label="Cartel del programa">
+    <h2 class="section-title">Cartel del programa</h2>
+    <p class="section-sub">Resumen visual del programa de Alfabetización Tecnológica Nivel 2 — Alcaldía de Chacao · UCV.</p>
+
+    <div class="cartel-showcase">
+      <div class="cartel-preview">
+        <a href="cartel/Cartel_Digital_Luisdavid_Colina.pdf" target="_blank" rel="noopener" aria-label="Ver cartel en PDF">
+          <img src="cartel/Cartel_Digital_Luisdavid_Colina.png" alt="Cartel del programa de Alfabetización Tecnológica" class="cartel-img">
+          <div class="cartel-overlay" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Ver en PDF
+          </div>
+        </a>
+      </div>
+      <div class="cartel-info">
+        <h3 class="cartel-titulo">Cartel Digital</h3>
+        <p class="cartel-desc">Diseñado como material de divulgación del programa. Toca la imagen para verlo en pantalla completa o descárgalo en el formato que prefieras.</p>
+        <div class="cartel-btns">
+          <a class="cta cta-primary" href="cartel/Cartel_Digital_Luisdavid_Colina.pdf" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Ver PDF
+          </a>
+          <a class="cta cta-secondary" href="cartel/Cartel_Digital_Luisdavid_Colina.png" download>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Descargar imagen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-marca">"La tecnología es un puente, no un muro"</div>
+    <p>Material educativo del programa de Alfabetización Tecnológica — Dirección de Desarrollo y Apoyo Social de la Alcaldía de Chacao.</p>
+    <p>Microproyecto de Servicio Comunitario · Facultad de Ciencias · Universidad Central de Venezuela.</p>
+    <div class="footer-logos-small" aria-label="Instituciones participantes">
+      <img src="assets/uni.png"     alt="UCV"                   class="footer-logo-sm">
+      <img src="assets/facu.png"    alt="Facultad de Ciencias"  class="footer-logo-sm">
+      <img src="assets/escuela.png" alt="Escuela Computación"   class="footer-logo-sm">
+      <img src="assets/chacao.png"  alt="Alcaldía de Chacao"    class="footer-logo-sm">
+    </div>
+    <div class="footer-autores">Elaborado por Luisdavid Colina y Victor Pestana</div>
+    <div class="footer-meta">SC · DSC-FC-UCV · Edición 2026</div>
+  </div>
+</footer>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+<!-- Scripts — orden importante: datos primero, luego app -->
+<script src="js/data/modulos.js"></script>
+<script src="js/data/tips.js"></script>
+<script src="js/data/faqs.js"></script>
+<script src="js/data/tests.js"></script>
+<script src="js/data/curiosidades.js"></script>
+<script src="js/data/glosario.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
