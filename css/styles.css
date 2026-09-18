@@ -250,7 +250,7 @@ ul { list-style: none; }
   border-radius: var(--radius-sm);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
   .menu-toggle { display: flex; }
   .nav {
     position: absolute;
@@ -268,7 +268,7 @@ ul { list-style: none; }
     transition: max-height 0.35s ease;
     z-index: 100;
   }
-  .nav.open { max-height: 500px; }
+  .nav.open { max-height: 700px; }
   .nav-btn { width: 100%; text-align: left; padding: 12px 16px; border-radius: var(--radius-sm); min-height: 44px; }
   /* brand empuja las tools a la derecha, hamburger va al final */
   .header-inner { flex-wrap: nowrap; }
@@ -1888,3 +1888,116 @@ ul { list-style: none; }
   body { background: white; color: black; font-size: 12pt; }
   .section-title, .modulo-titulo { color: #000 !important; }
 }
+
+/* ============================================================
+   VIDEOS DEL PROGRAMA (se cargan solo al tocarlos)
+   ============================================================ */
+.videos-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.video-card {
+  background: #fff;
+  border: 1px solid var(--crema-mid);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.video-play,
+.video-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  padding: 0;
+  background: #111;
+}
+.video-play {
+  position: relative;
+  cursor: pointer;
+}
+.video-play img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-icono {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: rgba(124, 29, 29, 0.92);
+  color: var(--crema);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition);
+}
+.video-play:hover .video-icono { transform: scale(1.08); }
+.video-play:focus-visible { outline: 3px solid var(--vinotinto); outline-offset: 3px; }
+.video-info { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.video-info h3 {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.2;
+  color: var(--vinotinto);
+}
+.video-info p { font-size: 0.88rem; line-height: 1.45; color: var(--tinta-soft); }
+.video-info a {
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vinotinto);
+}
+@media (max-width: 900px) { .videos-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) {
+  .videos-grid { gap: 12px; }
+  .video-info { padding: 12px 12px 14px; }
+  .video-icono { width: 54px; height: 54px; }
+}
+
+/* Tarjeta de videos en el inicio: ocupa la fila completa */
+.inicio-card[data-goto="videos"] { grid-column: 1 / -1; }
+
+/* Peso de cada lámina */
+.lamina-peso {
+  margin-left: auto;
+  padding-left: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gris);
+  white-space: nowrap;
+}
+
+/* Pie: compartir y contacto */
+.footer-compartir { margin: 26px 0 6px; }
+.footer-btn {
+  background: var(--crema);
+  color: var(--vinotinto);
+  border-color: var(--crema);
+}
+.footer-btn:hover { background: transparent; color: var(--crema); }
+.footer-contacto { margin-top: 8px; font-size: 0.85rem; opacity: 0.9; }
+.footer-contacto a { color: var(--dorado-light); font-weight: 600; }
+
+/* Menú colapsado forzado: cuando el texto agrandado (A+) ya no cabe en la barra */
+body.nav-compacta .menu-toggle { display: flex; }
+body.nav-compacta .nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--crema); flex-direction: column; padding: 12px; gap: 2px; border-bottom: 1px solid var(--gris-light); box-shadow: var(--shadow-md); max-height: 0; overflow: hidden; transition: max-height 0.35s ease; z-index: 100; }
+body.nav-compacta .nav.open { max-height: 700px; }
+body.nav-compacta .nav-btn { width: 100%; text-align: left; padding: 12px 16px; border-radius: var(--radius-sm); min-height: 44px; }
+body.nav-compacta .header-inner { flex-wrap: nowrap; }
+body.nav-compacta .brand { margin-right: auto; }
+body.nav-compacta .header-tools { order: 2; margin-left: 0; border-left: none; padding-left: 0; }
+body.nav-compacta .menu-toggle { order: 3; }
+body.nav-compacta .brand { font-size: 1rem; }
+body.nav-compacta .brand-text small { display: none; }

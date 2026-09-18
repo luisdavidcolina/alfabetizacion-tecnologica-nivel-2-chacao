@@ -24,10 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
   applyFontScale();
   applyContrast();
   setupNav();
+  const fromHash = sectionFromHash();
   const savedSection = localStorage.getItem('alfabet-section');
-  if (savedSection && document.getElementById(`section-${savedSection}`)) {
-    goToSection(savedSection);
-  }
+  const initial = fromHash || (savedSection && document.getElementById(`section-${savedSection}`) ? savedSection : null);
+  if (initial) goToSection(initial, { push: false, scroll: false });
+  history.replaceState({ section: initial || 'inicio' }, '', urlForSection(initial || 'inicio'));
+  window.addEventListener('popstate', e => {
+    const name = (e.state && e.state.section) || sectionFromHash() || 'inicio';
+    goToSection(name, { push: false });
+  });
+  setupVideos();
+  setupShare();
+  ajustarNav();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustarNav);
+  let esperaNav;
+  window.addEventListener('resize', () => { clearTimeout(esperaNav); esperaNav = setTimeout(ajustarNav, 120); });
   setupAccessibilityTools();
   renderInicio();
   renderTemario();
@@ -78,7 +89,21 @@ function setupNav() {
   });
 }
 
-function goToSection(name) {
+function sectionFromHash() {
+  const raw = decodeURIComponent(location.hash.replace('#', '')).replace(/^section-/, '');
+  return raw && document.getElementById(`section-${raw}`) ? raw : null;
+}
+
+function urlForSection(name) {
+  return name === 'inicio' ? location.pathname + location.search : `#${name}`;
+}
+
+function goToSection(name, opts = {}) {
+  if (!document.getElementById(`section-${name}`)) name = 'inicio';
+  const current = document.querySelector('.section.active');
+  if (opts.push !== false && (!current || current.id !== `section-${name}`)) {
+    history.pushState({ section: name }, '', urlForSection(name));
+  }
   document.querySelectorAll('.nav-btn').forEach(b => {
     const isActive = b.dataset.section === name;
     b.classList.toggle('active', isActive);
@@ -87,9 +112,76 @@ function goToSection(name) {
   document.querySelectorAll('.section').forEach(s => {
     s.classList.toggle('active', s.id === `section-${name}`);
   });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (opts.scroll !== false) window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById('nav').classList.remove('open');
   localStorage.setItem('alfabet-section', name);
+  if (name !== 'videos') stopVideos();
+}
+
+/* Si el texto agrandado ya no cabe en la barra del menú, se usa el menú plegable */
+function ajustarNav() {
+  document.body.classList.remove('nav-compacta');
+  if (window.matchMedia('(max-width: 1180px)').matches) return;
+  const limite = document.querySelector('.header-inner').getBoundingClientRect().right + 1;
+  const noCabe = document.documentElement.scrollWidth > window.innerWidth + 1 ||
+    [...document.querySelectorAll('.nav-btn')].some(b => b.getBoundingClientRect().right > limite);
+  if (noCabe) document.body.classList.add('nav-compacta');
+}
+
+/* ============================================================
+   VIDEOS: se cargan solo al tocarlos, para no gastar datos
+   ============================================================ */
+function setupVideos() {
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.video-play');
+    if (!btn) return;
+    const id = btn.dataset.video;
+    const frame = document.createElement('iframe');
+    frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
+    frame.title = btn.getAttribute('aria-label') || 'Video del programa';
+    frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    frame.allowFullscreen = true;
+    frame.className = 'video-frame';
+    frame.dataset.video = id;
+    btn.replaceWith(frame);
+  });
+}
+
+function stopVideos() {
+  document.querySelectorAll('iframe.video-frame').forEach(frame => {
+    const id = frame.dataset.video;
+    const btn = document.createElement('button');
+    btn.className = 'video-play';
+    btn.dataset.video = id;
+    btn.setAttribute('aria-label', frame.title);
+    btn.innerHTML = `<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><span class="video-icono" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>`;
+    frame.replaceWith(btn);
+  });
+}
+
+/* ============================================================
+   COMPARTIR LA PÁGINA
+   ============================================================ */
+function setupShare() {
+  const btn = document.getElementById('btn-compartir');
+  if (!btn) return;
+  btn.addEventListener('click', async () => {
+    const data = {
+      title: 'Alfabetización Tecnológica · Aprende tecnología sin miedo',
+      text: 'Material interactivo para aprender tecnología sin miedo:',
+      url: 'https://alfabetizacion.luisdavidcolina.com/'
+    };
+    if (navigator.share) {
+      try { await navigator.share(data); } catch (e) { /* el usuario canceló */ }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(data.url);
+      showToast('Enlace copiado. Ya puedes pegarlo donde quieras.');
+    } catch (e) {
+      showToast(data.url);
+    }
+  });
 }
 
 /* ============================================================
@@ -104,6 +196,7 @@ function setupAccessibilityTools() {
 function changeFontScale(delta) {
   fontScale = Math.min(1.5, Math.max(0.8, fontScale + delta));
   applyFontScale();
+  ajustarNav();
   localStorage.setItem('alfabet-fontScale', fontScale);
   const pct = Math.round(fontScale * 100);
   showToast(`Tamaño de texto: ${pct}%`);
@@ -220,7 +313,8 @@ function renderInicioCards() {
     { goto: 'faq',          icon: '💬', titulo: 'Preguntas frecuentes',     desc: 'Las dudas más comunes del programa resueltas: contraseñas, estafas, WiFi, IA, limpieza del celular y más.' },
     { goto: 'test',         icon: '🎯', titulo: 'Pon a prueba lo aprendido', desc: '4 niveles de evaluación con explicación de cada respuesta. Sin presión — cada error es una oportunidad de aprender.' },
     { goto: 'tips',         icon: '💡', titulo: '30 Tips para la vida digital', desc: 'Las recomendaciones más prácticas del programa. Aplícalas desde hoy en tu celular y computadora.' },
-    { goto: 'glosario',     icon: '📖', titulo: 'Glosario tecnológico',      desc: '40 términos del mundo digital explicados en palabras simples. Búscalos cuando tengas dudas.' }
+    { goto: 'glosario',     icon: '📖', titulo: 'Glosario tecnológico',      desc: '40 términos del mundo digital explicados en palabras simples. Búscalos cuando tengas dudas.' },
+    { goto: 'videos',       icon: '🎬', titulo: 'Videos del programa',       desc: 'El curso contado por sus protagonistas: la experiencia, el resumen, el recorrido por este material y las voces de los participantes.' }
   ];
   el.innerHTML = cards.map(c => `
     <button class="inicio-card" data-goto="${c.goto}" aria-label="Ir a ${c.titulo}">
