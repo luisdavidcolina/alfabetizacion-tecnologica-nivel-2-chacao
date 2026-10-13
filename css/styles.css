@@ -161,7 +161,6 @@ ul { list-style: none; }
   color: var(--vinotinto);
   font-variation-settings: "SOFT" 30, "WONK" 0;
   flex-shrink: 0;
-  margin-right: auto;
 }
 .brand-icon {
   width: 36px;
@@ -181,21 +180,63 @@ ul { list-style: none; }
 }
 
 /* Nav */
+/* El menú arranca junto al logo; las herramientas quedan a la derecha */
 .nav {
   display: flex;
-  gap: 2px;
+  align-items: center;
+  flex: 1;
+  --nav-dur: 0.42s;
+}
+.nav-grupo {
+  display: flex;
   align-items: center;
 }
-.nav-btn {
+.nav-btn, .nav-nivel {
   font-size: 0.87rem;
   font-weight: 500;
   color: var(--tinta-soft);
   background: transparent;
   border: none;
-  padding: 8px 14px;
+  padding: 8px 13px;
+  margin: 0 1px;
   border-radius: 999px;
-  transition: all var(--transition);
   white-space: nowrap;
+  overflow: hidden;
+  max-width: 14em;
+  /* --i escalona cuándo se recoge o despliega cada botón al cambiar de nivel */
+  --retraso: calc(var(--i, 0) * 35ms);
+  transition: background-color var(--transition), color var(--transition),
+              max-width var(--nav-dur) ease var(--retraso), padding var(--nav-dur) ease var(--retraso),
+              margin var(--nav-dur) ease var(--retraso), opacity calc(var(--nav-dur) * 0.6) ease var(--retraso);
+}
+/* Botón "Nivel N" que guarda los botones de un nivel recogido */
+.nav-nivel {
+  font-weight: 600;
+  color: var(--vinotinto);
+  border: 1.5px solid var(--vinotinto);
+  padding: 6.5px 13px;
+}
+.nav-nivel:hover {
+  background: var(--vinotinto);
+  color: var(--crema);
+}
+/* Lo que se recoge: los botones del nivel inactivo y el botón "Nivel N" del nivel activo */
+.nav[data-nivel="2"] [data-grupo="3"] .nav-btn,
+.nav[data-nivel="3"] [data-grupo="2"] .nav-btn,
+.nav[data-nivel="2"] [data-grupo="2"] .nav-nivel,
+.nav[data-nivel="3"] [data-grupo="3"] .nav-nivel {
+  max-width: 0;
+  min-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  border-width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.nav.sin-animacion .nav-btn, .nav.sin-animacion .nav-nivel { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-btn, .nav-nivel { transition: none; }
 }
 .nav-btn:hover {
   background: var(--vinotinto-soft);
@@ -270,6 +311,14 @@ ul { list-style: none; }
   }
   .nav.open { max-height: 700px; }
   .nav-btn { width: 100%; text-align: left; padding: 12px 16px; border-radius: var(--radius-sm); min-height: 44px; }
+  /* Menú desplegable: los niveles en columna, y lo recogido simplemente no se muestra */
+  .nav-grupo { flex-direction: column; align-items: stretch; width: 100%; }
+  .nav-btn, .nav-nivel { max-width: none; margin: 0; }
+  .nav-nivel { width: 100%; text-align: left; padding: 10.5px 16px; border-radius: var(--radius-sm); min-height: 44px; margin-top: 6px; }
+  .nav[data-nivel="2"] [data-grupo="3"] .nav-btn,
+  .nav[data-nivel="3"] [data-grupo="2"] .nav-btn,
+  .nav[data-nivel="2"] [data-grupo="2"] .nav-nivel,
+  .nav[data-nivel="3"] [data-grupo="3"] .nav-nivel { display: none; }
   /* brand empuja las tools a la derecha, hamburger va al final */
   .header-inner { flex-wrap: nowrap; }
   .brand { margin-right: auto; }
@@ -1995,9 +2044,109 @@ body.nav-compacta .menu-toggle { display: flex; }
 body.nav-compacta .nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--crema); flex-direction: column; padding: 12px; gap: 2px; border-bottom: 1px solid var(--gris-light); box-shadow: var(--shadow-md); max-height: 0; overflow: hidden; transition: max-height 0.35s ease; z-index: 100; }
 body.nav-compacta .nav.open { max-height: 700px; }
 body.nav-compacta .nav-btn { width: 100%; text-align: left; padding: 12px 16px; border-radius: var(--radius-sm); min-height: 44px; }
+body.nav-compacta .nav-grupo { flex-direction: column; align-items: stretch; width: 100%; }
+body.nav-compacta .nav-btn, body.nav-compacta .nav-nivel { max-width: none; margin: 0; }
+body.nav-compacta .nav-nivel { width: 100%; text-align: left; padding: 10.5px 16px; border-radius: var(--radius-sm); min-height: 44px; margin-top: 6px; }
+body.nav-compacta .nav[data-nivel="2"] [data-grupo="3"] .nav-btn,
+body.nav-compacta .nav[data-nivel="3"] [data-grupo="2"] .nav-btn,
+body.nav-compacta .nav[data-nivel="2"] [data-grupo="2"] .nav-nivel,
+body.nav-compacta .nav[data-nivel="3"] [data-grupo="3"] .nav-nivel { display: none; }
 body.nav-compacta .header-inner { flex-wrap: nowrap; }
 body.nav-compacta .brand { margin-right: auto; }
 body.nav-compacta .header-tools { order: 2; margin-left: 0; border-left: none; padding-left: 0; }
 body.nav-compacta .menu-toggle { order: 3; }
 body.nav-compacta .brand { font-size: 1rem; }
 body.nav-compacta .brand-text small { display: none; }
+
+/* ============================================================
+   NIVEL 3: bloques extra de los módulos (paso a paso, problemas, láminas)
+   ============================================================ */
+.nivel-aviso {
+  max-width: 760px;
+  margin: -28px 0 32px;
+  background: var(--crema-dark);
+  border-left: 4px solid var(--dorado);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 12px 18px;
+  font-size: 0.92rem;
+  color: var(--tinta-soft);
+}
+.nivel-aviso strong { color: var(--vinotinto); }
+
+.modulo-ancho { grid-column: 1 / -1; }
+/* Que ningún bloque ensanche la columna en pantallas angostas (palabras largas, etiquetas) */
+.modulo-grid > * { min-width: 0; overflow-wrap: break-word; }
+.modulo-seccion .lamina-link { flex-wrap: wrap; row-gap: 4px; }
+/* El título va siempre junto al ícono; si no cabe todo, bajan la etiqueta y el peso */
+.lamina-titulo { flex: 1 1 12em; min-width: 0; }
+
+.actividad + .actividad { margin-top: 22px; }
+.actividad h5 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vinotinto);
+  margin-bottom: 12px;
+}
+.actividad-aviso {
+  background: rgba(232, 181, 71, 0.16);
+  border-left: 4px solid var(--amarillo);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+}
+.pasos { list-style: none; padding: 0; counter-reset: paso; }
+.modulo-seccion .pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding-left: 38px;
+  margin-bottom: 10px;
+}
+.pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--vinotinto);
+  color: var(--crema);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problemas { display: grid; gap: 8px; }
+.problema {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 4px 18px;
+  background: white;
+  border: 1px solid var(--crema-mid);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.problema dt { font-weight: 600; color: var(--tinta); }
+.problema dd { margin: 0; color: var(--tinta-soft); }
+@media (max-width: 600px) { .problema { grid-template-columns: 1fr; } }
+
+.modulo-seccion .laminas-list li { padding-left: 0; margin: 0; }
+.modulo-seccion .laminas-list li::before { content: none; }
+.lamina-aviso {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rojo-error);
+  background: rgba(192, 68, 68, 0.1);
+  border-radius: 999px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
