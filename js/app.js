@@ -449,7 +449,7 @@ function renderModulos(t) {
             <ul class="laminas-list">${c.laminas.map(l => `
               <li><a class="lamina-link" href="${t.laminasDir}${l.archivo}" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                ${l.titulo}${l.aviso ? ` <span class="lamina-aviso">${l.aviso}</span>` : ''} <span class="lamina-peso">PDF · ${l.peso}</span>
+                <span class="lamina-titulo">${l.titulo}</span>${l.aviso ? ` <span class="lamina-aviso">${l.aviso}</span>` : ''} <span class="lamina-peso">PDF · ${l.peso}</span>
               </a></li>`).join('')}
             </ul>
           </div>` : '';
