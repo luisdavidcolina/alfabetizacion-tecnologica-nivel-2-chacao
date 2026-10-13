@@ -9,6 +9,7 @@
 let fontScale = parseFloat(localStorage.getItem('alfabet-fontScale') || '1');
 let highContrast = localStorage.getItem('alfabet-contrast') === 'true';
 let completedModules = new Set(JSON.parse(localStorage.getItem('alfabet-completed') || '[]'));
+let completedModulesN3 = new Set(JSON.parse(localStorage.getItem('alfabet-completed-n3') || '[]'));
 
 let testState = { current: null, qIdx: 0, answers: [] };
 let faqState  = { cat: 'todas', search: '' };
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupAccessibilityTools();
   renderInicio();
   renderTemario();
+  renderModulos(TEMARIO_N3);
   renderCuriosidades();
   renderTips();
   renderFAQ();
@@ -51,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupGlosarioControls();
   setupCuriTabs();
   setupTipsFilter();
+  // El estado inicial del menú se pinta sin animación; desde aquí, los cambios de nivel se animan
+  requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('nav').classList.remove('sin-animacion')));
 });
 
 /* ============================================================
@@ -61,6 +65,13 @@ function setupNav() {
   navBtns.forEach(btn => {
     btn.addEventListener('click', () => goToSection(btn.dataset.section));
   });
+
+  // Botones "Nivel 2" / "Nivel 3": llevan a la primera sección de su nivel
+  document.querySelectorAll('.nav-nivel').forEach(btn => {
+    const grupo = btn.closest('.nav-grupo');
+    btn.addEventListener('click', () => goToSection(grupo.querySelector('.nav-btn').dataset.section));
+  });
+  mostrarNivel('2');
 
   const menuToggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('nav');
@@ -104,6 +115,7 @@ function goToSection(name, opts = {}) {
   if (opts.push !== false && (!current || current.id !== `section-${name}`)) {
     history.pushState({ section: name }, '', urlForSection(name));
   }
+  mostrarNivel(nivelDeSeccion(name));
   document.querySelectorAll('.nav-btn').forEach(b => {
     const isActive = b.dataset.section === name;
     b.classList.toggle('active', isActive);
@@ -118,13 +130,42 @@ function goToSection(name, opts = {}) {
   if (name !== 'videos') stopVideos();
 }
 
+/* ============================================================
+   NIVELES DEL MENÚ
+   Cada sección pertenece al nivel del grupo donde está su botón. Los botones
+   del nivel inactivo se recogen dentro de su botón "Nivel N" (.nav[data-nivel] en el CSS)
+   ============================================================ */
+function nivelDeSeccion(name) {
+  const btn = document.querySelector(`.nav-btn[data-section="${name}"]`);
+  return btn ? btn.closest('.nav-grupo').dataset.grupo : '2';
+}
+
+function mostrarNivel(nivel) {
+  const nav = document.getElementById('nav');
+  const cambia = nav.dataset.nivel !== nivel;
+  nav.dataset.nivel = nivel;
+  document.getElementById('brand-nivel').textContent = `Nivel ${nivel}`;
+  nav.querySelectorAll('.nav-grupo').forEach(grupo => {
+    const activo = grupo.dataset.grupo === nivel;
+    const btns = [...grupo.querySelectorAll('.nav-btn')];
+    btns.forEach((b, k) => {
+      // Escalonado: al recoger se van primero los más lejanos al botón del nivel; al desplegar salen primero los más cercanos
+      b.style.setProperty('--i', activo ? k : btns.length - 1 - k);
+      b.inert = !activo;
+    });
+    grupo.querySelector('.nav-nivel').inert = activo;
+  });
+  // El menú de un nivel puede caber en la barra y el del otro no
+  if (cambia) setTimeout(ajustarNav, 800);
+}
+
 /* Si el texto agrandado ya no cabe en la barra del menú, se usa el menú plegable */
 function ajustarNav() {
   document.body.classList.remove('nav-compacta');
   if (window.matchMedia('(max-width: 1180px)').matches) return;
   const limite = document.querySelector('.header-inner').getBoundingClientRect().right + 1;
   const noCabe = document.documentElement.scrollWidth > window.innerWidth + 1 ||
-    [...document.querySelectorAll('.nav-btn')].some(b => b.getBoundingClientRect().right > limite);
+    [...document.querySelectorAll('.nav-btn, .nav-nivel')].some(b => b.getBoundingClientRect().right > limite);
   if (noCabe) document.body.classList.add('nav-compacta');
 }
 
@@ -332,14 +373,38 @@ function renderInicioCards() {
    SECCIÓN: TEMARIO
    ============================================================ */
 function renderTemario() {
-  renderProgressBanner();
-  const container = document.getElementById('modulos-container');
+  renderModulos(TEMARIO_N2);
+}
+
+const TEMARIO_N2 = {
+  modulos: MODULOS,
+  completados: completedModules,
+  storageKey: 'alfabet-completed',
+  containerId: 'modulos-container',
+  bannerId: 'progress-banner'
+};
+
+/* ============================================================
+   SECCIÓN: NIVEL 3 (mismo formato que el temario, con paso a paso y láminas)
+   ============================================================ */
+const TEMARIO_N3 = {
+  modulos: MODULOS_N3,
+  completados: completedModulesN3,
+  storageKey: 'alfabet-completed-n3',
+  containerId: 'modulos-container-n3',
+  bannerId: 'progress-banner-n3',
+  laminasDir: 'laminas/nivel3/'
+};
+
+function renderModulos(t) {
+  renderProgressBanner(t);
+  const container = document.getElementById(t.containerId);
   if (!container) return;
 
   container.innerHTML = '';
-  MODULOS.forEach((m, idx) => {
+  t.modulos.forEach((m, idx) => {
     const card = document.createElement('article');
-    card.className = 'modulo-card' + (completedModules.has(idx) ? ' completado' : '');
+    card.className = 'modulo-card' + (t.completados.has(idx) ? ' completado' : '');
     card.setAttribute('role', 'listitem');
     card.setAttribute('aria-label', `Módulo ${m.num}: ${m.titulo}`);
 
@@ -347,9 +412,47 @@ function renderTemario() {
       ? `<div class="modulo-badge nuevo">★ Nuevo</div>`
       : `<div class="modulo-badge">Módulo</div>`;
 
-    const datoHTML = m.contenido.dato
-      ? `<div class="modulo-dato">💡 <strong>Dato:</strong> ${m.contenido.dato}</div>`
+    const c = m.contenido;
+    const datoHTML = c.dato
+      ? `<div class="modulo-dato">💡 <strong>Dato:</strong> ${c.dato}</div>`
       : '';
+
+    // Bloques opcionales (los usa el Nivel 3)
+    const conceptosHTML = c.conceptos ? `
+          <div class="modulo-seccion">
+            <h4>${c.conceptosTitulo || 'Conceptos clave'}</h4>
+            <ul>${c.conceptos.map(x => `<li>${x}</li>`).join('')}</ul>
+          </div>` : '';
+
+    const pasosHTML = c.actividades ? `
+          <div class="modulo-seccion modulo-ancho">
+            <h4>Paso a paso</h4>
+            ${c.actividades.map(a => `
+              <div class="actividad">
+                <h5>${a.titulo}</h5>
+                ${a.aviso ? `<p class="actividad-aviso">⚠️ ${a.aviso}</p>` : ''}
+                <ol class="pasos">${a.pasos.map(x => `<li>${x}</li>`).join('')}</ol>
+              </div>`).join('')}
+          </div>` : '';
+
+    const problemasHTML = c.problemas ? `
+          <div class="modulo-seccion modulo-ancho">
+            <h4>Si algo sale mal</h4>
+            <dl class="problemas">${c.problemas.map(x => `
+              <div class="problema"><dt>${x.si}</dt><dd>${x.haz}</dd></div>`).join('')}
+            </dl>
+          </div>` : '';
+
+    const laminasHTML = c.laminas ? `
+          <div class="modulo-seccion modulo-ancho">
+            <h4>Láminas de esta clase</h4>
+            <ul class="laminas-list">${c.laminas.map(l => `
+              <li><a class="lamina-link" href="${t.laminasDir}${l.archivo}" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                ${l.titulo}${l.aviso ? ` <span class="lamina-aviso">${l.aviso}</span>` : ''} <span class="lamina-peso">PDF · ${l.peso}</span>
+              </a></li>`).join('')}
+            </ul>
+          </div>` : '';
 
     card.innerHTML = `
       <div class="modulo-num">${m.num}.</div>
@@ -357,34 +460,34 @@ function renderTemario() {
       <h3 class="modulo-titulo">${m.titulo}</h3>
       <p class="modulo-desc">${m.desc}</p>
       <div class="modulo-temas" aria-label="Temas">
-        ${m.temas.map(t => `<span class="tema-chip">${t}</span>`).join('')}
+        ${m.temas.map(tema => `<span class="tema-chip">${tema}</span>`).join('')}
       </div>
       <div class="modulo-contenido" aria-hidden="true">
         <div class="modulo-grid">
-          <div class="modulo-seccion">
+          <div class="modulo-seccion${c.conceptos ? '' : ' modulo-ancho'}">
             <h4>Resumen</h4>
-            <p>${m.contenido.resumen}</p>
+            <p>${c.resumen}</p>
           </div>
-          <div class="modulo-seccion">
-            <h4>Conceptos clave</h4>
-            <ul>${m.contenido.conceptos.map(c => `<li>${c}</li>`).join('')}</ul>
-          </div>
+          ${conceptosHTML}
+          ${pasosHTML}
           <div class="puntos-clave">
             <h4>★ Recuerda siempre</h4>
-            <ul>${m.contenido.claves.map(c => `<li>${c}</li>`).join('')}</ul>
+            <ul>${c.claves.map(x => `<li>${x}</li>`).join('')}</ul>
           </div>
+          ${problemasHTML}
           ${datoHTML}
+          ${laminasHTML}
         </div>
         <div class="modulo-actions">
-          <button class="cta cta-ghost btn-completar" data-idx="${idx}" aria-label="${completedModules.has(idx) ? 'Marcar como no completado' : 'Marcar como completado'}">
-            ${completedModules.has(idx) ? '✓ Completado' : '○ Marcar completado'}
+          <button class="cta cta-ghost btn-completar" data-idx="${idx}" aria-label="${t.completados.has(idx) ? 'Marcar como no completado' : 'Marcar como completado'}">
+            ${t.completados.has(idx) ? '✓ Completado' : '○ Marcar completado'}
           </button>
         </div>
       </div>
     `;
 
     card.addEventListener('click', e => {
-      if (e.target.closest('.btn-completar')) return;
+      if (e.target.closest('.btn-completar, a')) return;
       const isExpanded = card.classList.toggle('expanded');
       const contenido = card.querySelector('.modulo-contenido');
       contenido.setAttribute('aria-hidden', !isExpanded);
@@ -392,36 +495,36 @@ function renderTemario() {
 
     card.querySelector('.btn-completar').addEventListener('click', e => {
       e.stopPropagation();
-      toggleCompleted(idx, card);
+      toggleCompleted(t, idx, card);
     });
 
     container.appendChild(card);
   });
 }
 
-function toggleCompleted(idx, card) {
-  if (completedModules.has(idx)) {
-    completedModules.delete(idx);
+function toggleCompleted(t, idx, card) {
+  if (t.completados.has(idx)) {
+    t.completados.delete(idx);
     card.classList.remove('completado');
     card.querySelector('.btn-completar').textContent = '○ Marcar completado';
     showToast('Módulo desmarcado');
   } else {
-    completedModules.add(idx);
+    t.completados.add(idx);
     card.classList.add('completado');
     card.querySelector('.btn-completar').textContent = '✓ Completado';
     showToast('¡Módulo completado! 🎉');
-    if (completedModules.size === MODULOS.length) lanzarConfetti();
+    if (t.completados.size === t.modulos.length) lanzarConfetti();
   }
-  localStorage.setItem('alfabet-completed', JSON.stringify([...completedModules]));
-  renderProgressBanner();
+  localStorage.setItem(t.storageKey, JSON.stringify([...t.completados]));
+  renderProgressBanner(t);
 }
 
-function renderProgressBanner() {
-  const el = document.getElementById('progress-banner');
+function renderProgressBanner(t) {
+  const el = document.getElementById(t.bannerId);
   if (!el) return;
-  const pct = Math.round((completedModules.size / MODULOS.length) * 100);
+  const pct = Math.round((t.completados.size / t.modulos.length) * 100);
   el.innerHTML = `
-    <div class="progress-text">${completedModules.size} / ${MODULOS.length} módulos</div>
+    <div class="progress-text">${t.completados.size} / ${t.modulos.length} módulos</div>
     <div class="progress-bar-wrap" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso del curso">
       <div class="progress-bar-fill" style="width:${pct}%"></div>
     </div>

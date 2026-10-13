@@ -48,7 +48,7 @@
       </a>
       <div class="brand-text">
         Alfabetización Tecnológica
-        <small>Nivel 2 · SC-FC-UCV · 2026</small>
+        <small><span id="brand-nivel">Nivel 2</span> · SC-FC-UCV · 2026</small>
       </div>
     </div>
 
@@ -60,16 +60,24 @@
       </svg>
     </button>
 
-    <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
-      <button class="nav-btn active" data-section="inicio" aria-current="page">Inicio</button>
-      <button class="nav-btn" data-section="temario">Temario</button>
-      <button class="nav-btn" data-section="curiosidades">Curiosidades</button>
-      <button class="nav-btn" data-section="tips">Tips</button>
-      <button class="nav-btn" data-section="faq">Preguntas</button>
-      <button class="nav-btn" data-section="test">Test</button>
-      <button class="nav-btn" data-section="glosario">Glosario</button>
-      <button class="nav-btn" data-section="videos">Videos</button>
-      <button class="nav-btn" data-section="cartel">Cartel</button>
+    <!-- Un grupo por nivel. Al cambiar de nivel, los botones del otro se recogen en su botón "Nivel N" -->
+    <nav class="nav sin-animacion" id="nav" data-nivel="2" role="navigation" aria-label="Navegación principal">
+      <div class="nav-grupo" data-grupo="2">
+        <button class="nav-nivel" data-nivel-ir="2">Nivel 2</button>
+        <button class="nav-btn active" data-section="inicio" aria-current="page">Inicio</button>
+        <button class="nav-btn" data-section="temario">Temario</button>
+        <button class="nav-btn" data-section="curiosidades">Curiosidades</button>
+        <button class="nav-btn" data-section="tips">Tips</button>
+        <button class="nav-btn" data-section="faq">Preguntas</button>
+        <button class="nav-btn" data-section="test">Test</button>
+        <button class="nav-btn" data-section="glosario">Glosario</button>
+        <button class="nav-btn" data-section="videos">Videos</button>
+        <button class="nav-btn" data-section="cartel">Cartel</button>
+      </div>
+      <div class="nav-grupo" data-grupo="3">
+        <button class="nav-nivel" data-nivel-ir="3">Nivel 3</button>
+        <button class="nav-btn" data-section="nivel3">Temario</button>
+      </div>
     </nav>
 
     <div class="header-tools" role="toolbar" aria-label="Herramientas de accesibilidad">
@@ -357,6 +365,15 @@
     </div>
   </section>
 
+  <!-- ---- NIVEL 3 ---- -->
+  <section class="section" id="section-nivel3" aria-label="Temario del Nivel 3">
+    <h2 class="section-title">Temario del Nivel 3</h2>
+    <p class="section-sub">Emprendimiento digital: cada módulo es una clase, con su paso a paso y las láminas que usamos. Toca cada tarjeta para ver el contenido detallado.</p>
+    <p class="nivel-aviso">🛠️ <strong>Curso en desarrollo.</strong> Vamos sumando módulos nuevos según lo que piden los participantes.</p>
+    <div class="progress-banner" id="progress-banner-n3" role="status" aria-live="polite"></div>
+    <div class="modulos" id="modulos-container-n3" role="list"></div>
+  </section>
+
 </main>
 
 <!-- ============================== FOOTER ============================== -->
@@ -390,6 +407,7 @@
 
 <!-- Scripts — orden importante: datos primero, luego app -->
 <script src="js/data/modulos.js"></script>
+<script src="js/data/nivel3.js"></script>
 <script src="js/data/tips.js"></script>
 <script src="js/data/faqs.js"></script>
 <script src="js/data/tests.js"></script>
