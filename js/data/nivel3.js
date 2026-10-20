@@ -250,5 +250,143 @@ const MODULOS_N3 = [
         { titulo: "Gemini: tu asistente para escribir y crear", archivo: "modulo4-gemini.pdf", peso: "6 MB" }
       ]
     }
+  },
+  {
+    num: "v",
+    titulo: "Redes sociales para tu negocio: tu primer post en Instagram",
+    desc: "Conoce para qué sirve cada red, crea la cuenta de tu negocio en Instagram y publica tu primer post.",
+    temas: ["WhatsApp", "Facebook", "Instagram", "Primer post"],
+    esNuevo: false,
+    contenido: {
+      resumen: "Las redes sociales son la versión moderna del boca a boca: una vitrina siempre abierta, sin pagar local, que llega a vecinos e interesados de tu misma ciudad y muestra quién está detrás de cada producto. En esta clase vimos para qué sirve cada red y, paso a paso, creamos la cuenta del negocio en Instagram y publicamos el primer post.",
+      conceptosTitulo: "Para qué sirve cada red",
+      conceptos: [
+        "<strong>WhatsApp</strong>: atención inmediata, catálogo de productos y confirmación de pedidos. Es el canal principal de ventas.",
+        "<strong>Facebook</strong>: grupos del barrio, comunidad local y publicaciones que explican con más detalle.",
+        "<strong>Instagram</strong>: la vitrina visual, con fotos atractivas de los productos terminados.",
+        "<strong>Comida y repostería</strong>: fotos con luz natural, videos cortos decorando o amasando, y un botón a WhatsApp en el perfil.",
+        "<strong>Artesanía y tejidos</strong>: cuenta la historia de cada pieza, el tiempo que te tomó, y avisa que aceptas encargos a medida."
+      ],
+      actividades: [
+        {
+          titulo: "Instalar Instagram y crear la cuenta",
+          pasos: [
+            "Abre la tienda de aplicaciones (<strong>Play Store</strong> o <strong>App Store</strong>), toca la lupa y escribe <em>Instagram</em>.",
+            "Toca <strong>Instalar</strong> (u <strong>Obtener</strong>), abre la aplicación y toca <strong>Crear cuenta nueva</strong>.",
+            "Escribe tu correo o tu número de celular e inventa una contraseña. Anótala en un cuaderno.",
+            "Como nombre de usuario usa el nombre de tu negocio. Toca <strong>Siguiente</strong> y escribe tu fecha de nacimiento."
+          ]
+        },
+        {
+          titulo: "Cambiar a cuenta de empresa",
+          pasos: [
+            "Toca tu foto (abajo a la derecha) y luego las <strong>tres rayas</strong> de arriba.",
+            "Toca <strong>Configuración</strong> y luego <strong>Tipo de cuenta y herramientas</strong>.",
+            "Elige <strong>Cambiar a cuenta profesional</strong> y luego <strong>Empresa</strong>.",
+            "Agrega una foto, una descripción corta de lo que vendes y tu teléfono. Toca <strong>Guardar</strong>."
+          ]
+        },
+        {
+          titulo: "Publicar tu primer post",
+          pasos: [
+            "Toca el botón <strong>+</strong> en la parte de abajo y elige <strong>Publicación</strong>.",
+            "Toca la foto de tu producto o tu negocio y luego <strong>Siguiente</strong> (arriba a la derecha).",
+            "Escribe una descripción corta: qué vendes, el precio y cómo contactarte.",
+            "Toca <strong>Compartir</strong>. ¡Listo! Tu publicación ya es pública."
+          ]
+        }
+      ],
+      claves: [
+        "Empieza con <strong>una sola red</strong>: WhatsApp o Facebook. Cuando la domines, suma otra.",
+        "Fotos de día, cerca de una ventana, con el producto claro y sin cosas de fondo.",
+        "Texto corto: qué vendes, el precio y cómo contactarte, sin rodeos.",
+        "Usa de 3 a 5 hashtags, como <em>#emprendimiento</em> y el nombre de tu ciudad.",
+        "Publica con constancia (por ejemplo, una vez por semana) y responde los mensajes y comentarios.",
+        "Confirma que recibiste el pago antes de enviar un pedido lejos, y define tu horario de atención."
+      ],
+      dato: "Los <strong>estados de WhatsApp</strong> duran 24 horas: son ideales para la oferta del día. Y con el <strong>mensaje de bienvenida</strong>, WhatsApp le responde solo a quien te escribe por primera vez.",
+      laminas: [
+        { titulo: "El poder de las redes sociales en tu emprendimiento", archivo: "modulo5-redes-sociales-emprendimiento.pdf", peso: "0.3 MB" },
+        { titulo: "Tu negocio en Instagram paso a paso", archivo: "modulo5-negocio-en-instagram.pdf", peso: "1.6 MB" }
+      ]
+    }
+  },
+  {
+    num: "vi",
+    titulo: "Tu negocio en movimiento: carrusel y video con Edits",
+    desc: "Graba un video corto de tu producto, edítalo gratis con Edits y publícalo en un carrusel de Instagram.",
+    temas: ["Carrusel", "Video corto", "Edits", "Instagram"],
+    esNuevo: false,
+    contenido: {
+      resumen: "Un carrusel son varias fotos o videos en una sola publicación: el cliente desliza el dedo para ver la siguiente, como un álbum. En esta clase grabamos un video corto del producto, lo editamos con <strong>Edits</strong> (la app gratuita de Instagram para editar videos, sin marca de agua) y publicamos un carrusel con fotos y el video adentro.",
+      conceptosTitulo: "Carrusel, reel o historia",
+      conceptos: [
+        "<strong>Carrusel</strong>: varias fotos o videos que se deslizan. Queda en tu perfil. Para varios productos, un antes y después o un paso a paso.",
+        "<strong>Reel</strong>: un video vertical. Queda en tu perfil. Para mostrar el producto en movimiento.",
+        "<strong>Historia</strong>: una foto o un video corto que se borra en 24 horas. Para ofertas del día y avisos rápidos.",
+        "<strong>Un buen carrusel</strong>: la mejor foto de portada, un orden que cuente algo, entre 4 y 6 láminas, todas con la misma forma y la última con el contacto.",
+        "<strong>Un video en 3 partes</strong>: el gancho (lo más bonito, los primeros 3 segundos), en acción (tus manos trabajando) y el contacto («Pedidos por WhatsApp»). En total, de 15 a 30 segundos."
+      ],
+      actividades: [
+        {
+          titulo: "Grabar tus 3 tomas",
+          pasos: [
+            "Antes de grabar, dibuja en papel tu carrusel (5 casillas) y tu video (3 tomas): qué va en cada una.",
+            "Abre la cámara normal del celular, elige <strong>Video</strong> y pon el celular <strong>de pie</strong>.",
+            "Graba unos 5 segundos de cada toma, cerca de una ventana y apoyando los codos para que no tiemble.",
+            "No tiene que salir perfecto: lo que sobre, se corta después."
+          ]
+        },
+        {
+          titulo: "Instalar Edits",
+          aviso: "En la tienda, la primera de la lista dice <strong>«Patrocinado»</strong>: es un anuncio, no es la nuestra. La app pesa 125 MB, mejor descárgala con Wi‑Fi.",
+          pasos: [
+            "Abre <strong>Play Store</strong> (en iPhone, <strong>App Store</strong>), toca la lupa y escribe <em>edits</em>.",
+            "Busca <strong>Edits: Editor de vídeo</strong>: debajo dice <em>Instagram</em>. Toca <strong>Instalar</strong> y luego <strong>Abrir</strong>.",
+            "Toca <strong>Continuar con Instagram</strong> para entrar con la cuenta de tu negocio."
+          ]
+        },
+        {
+          titulo: "Editar el video",
+          pasos: [
+            "Toca el botón blanco <strong>+</strong> (abajo a la derecha), elige <strong>Galería</strong> y, cuando pregunte por tus fotos y videos, toca <strong>Permitir todo</strong>.",
+            "Toca el círculo de cada toma en el orden de tu hoja (aparecen los números 1, 2, 3) y luego el <strong>✓</strong> blanco.",
+            "Para cambiar el orden, deja el dedo sobre una toma y arrástrala. Para acortarla, tócala (se pone amarilla) y arrastra sus bordes.",
+            "Toca <strong>Texto</strong>, escribe algo corto (<em>Tortas caseras</em>), toca la <strong>A</strong> en un cuadro, elige <strong>Fondo revertido</strong> y toca <strong>Listo</strong>. Repite en la última toma con <em>Pedidos por WhatsApp</em>.",
+            "Toca <strong>+ Agregar audio</strong>, escucha las canciones, elige una y con la tijera escoge qué parte suena. Toca <strong>✓</strong>.",
+            "Toca ▶ y mira el video completo antes de seguir."
+          ]
+        },
+        {
+          titulo: "Guardar el video y publicar el carrusel",
+          pasos: [
+            "En Edits toca <strong>Siguiente</strong>, espera a que llegue al 100 % sin cerrar la app y toca <strong>Descargar</strong>: el video queda en tu galería.",
+            "Abre Instagram, toca <strong>+</strong> y abajo elige <strong>PUBLICACIÓN</strong>. Toca <strong>Seleccionar</strong>.",
+            "Toca tus fotos y tu video en el orden de tu hoja (aparecen números) y luego <strong>Siguiente</strong>.",
+            "Escribe la descripción (qué vendes, precio y contacto), agrega de 3 a 5 hashtags y toca <strong>Compartir</strong>."
+          ]
+        }
+      ],
+      claves: [
+        "Siempre con el celular <strong>de pie</strong>: así se ve como en el teléfono.",
+        "Varias tomas cortas de 5 segundos son mejores que una larga.",
+        "Texto con pocas palabras, letra grande y con fondo, para que se lea.",
+        "La música, de la biblioteca de la app, no de la radio ni de otro video. Evita las canciones con una <strong>E</strong>: tienen lenguaje fuerte.",
+        "Revisa que no salga nada privado en el fondo: tu dirección, documentos o la placa del carro.",
+        "Apenas termines el video, toca <strong>Descargar</strong>: así queda seguro en tu galería."
+      ],
+      problemas: [
+        { si: "No veo mis videos en Edits", haz: "El permiso de fotos quedó en «limitado». Pide ayuda para cambiarlo a <strong>Permitir todo</strong>." },
+        { si: "Se cerró la app", haz: "Ábrela de nuevo: tu trabajo sigue en <strong>Proyectos</strong>." },
+        { si: "Borré algo sin querer", haz: "Toca la flecha curva de arriba: deshace el último paso." },
+        { si: "El video salió acostado", haz: "Se grabó con el celular de lado. Vuelve a grabar con el celular de pie." },
+        { si: "El video quedó sin sonido al publicarlo", haz: "Algunas cuentas de empresa no permiten canciones famosas. Usa el sonido original o elige la música desde Instagram al publicar." }
+      ],
+      dato: "Tu video también sirve para los <strong>estados de WhatsApp</strong>: entra a los estados, toca para agregar uno y elige el video de tu galería. Y si en Edits tocas <strong>Instagram</strong> en vez de Descargar, se publica como reel.",
+      laminas: [
+        { titulo: "Carrusel y video · Teoría", archivo: "modulo6-teoria-carrusel-video.pdf", peso: "2.7 MB" },
+        { titulo: "Carrusel y video con Edits · Práctica", archivo: "modulo6-practica-carrusel-video-edits.pdf", peso: "7 MB" }
+      ]
+    }
   }
 ];
