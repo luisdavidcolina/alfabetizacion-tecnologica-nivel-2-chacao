@@ -388,5 +388,314 @@ const MODULOS_N3 = [
         { titulo: "Carrusel y video con Edits · Práctica", archivo: "modulo6-practica-carrusel-video-edits.pdf", peso: "7 MB" }
       ]
     }
+  },
+  {
+    num: "vii",
+    titulo: "TikTok para tu emprendimiento",
+    desc: "Conoce TikTok, en qué se diferencia de Instagram, crea la cuenta de tu negocio y publica tu primer video.",
+    temas: ["TikTok", "Para ti", "Cuenta de empresa", "Primer video"],
+    esNuevo: false,
+    contenido: {
+      resumen: "TikTok es una aplicación gratuita para ver y crear videos cortos, en vertical, con música, texto y sonidos. A diferencia de Instagram, tus videos no los ven solo tus seguidores: TikTok se los muestra a personas a quienes les puede interesar, aunque todavía no te conozcan. En esta clase vimos cómo funciona, creamos la cuenta del negocio y publicamos el primer video.",
+      conceptosTitulo: "TikTok frente a Instagram",
+      conceptos: [
+        "<strong>Qué se publica</strong>: en Instagram, fotos y videos; en TikTok, sobre todo videos cortos.",
+        "<strong>Quién lo ve</strong>: en Instagram, principalmente tus seguidores; en TikTok, cualquier persona a quien le interese.",
+        "<strong>La primera pantalla</strong>: Instagram muestra lo de las cuentas que sigues; TikTok abre en <strong>Para ti</strong>, con videos que te recomienda.",
+        "<strong>El estilo</strong>: Instagram es más cuidado y arreglado; TikTok, más natural y espontáneo. Instagram también tiene videos cortos, los <strong>reels</strong>, muy parecidos.",
+        "<strong>Cómo llega tu video</strong>: lo publicas, TikTok se lo muestra a pocas personas y, si les gusta, a más. Por eso no necesitas muchos seguidores para empezar."
+      ],
+      actividades: [
+        {
+          titulo: "Instalar TikTok y registrarte",
+          pasos: [
+            "Abre la tienda de aplicaciones (<strong>Play Store</strong> o <strong>App Store</strong>), toca la lupa y escribe <em>TikTok</em>. Toca <strong>Instalar</strong>.",
+            "Abre TikTok y toca <strong>Perfil</strong>, abajo a la derecha.",
+            "Toca <strong>Usar teléfono o correo</strong> y sigue las instrucciones.",
+            "Anota tu contraseña en un cuaderno."
+          ]
+        },
+        {
+          titulo: "Cambiar a cuenta de empresa y completar el perfil",
+          pasos: [
+            "Toca <strong>Perfil</strong> y luego las <strong>tres rayas</strong>, arriba a la derecha.",
+            "Toca <strong>Configuración y privacidad → Cuenta → Cambiar a cuenta de empresa</strong>.",
+            "Elige la categoría de tu negocio, por ejemplo comida o ropa.",
+            "Vuelve a tu perfil y toca <strong>Editar perfil</strong>: pon una foto clara (tu logo o tu cara), el nombre del negocio, qué vendes y tu teléfono."
+          ]
+        },
+        {
+          titulo: "Grabar y publicar tu primer video",
+          pasos: [
+            "Toca el botón <strong>+</strong>, abajo en el centro, y apunta la cámara a tu producto.",
+            "Toca el <strong>círculo rojo</strong> para empezar y otra vez para parar. Cuando termines, toca la palomita <strong>✓</strong>.",
+            "Escribe una descripción corta y agrega 3 hashtags, como <em>#emprendimiento</em>.",
+            "Revisa que en quién puede verlo diga <strong>Todos</strong> y toca <strong>Publicar</strong>."
+          ]
+        }
+      ],
+      claves: [
+        "Graba con el celular <strong>de pie</strong>, de día y cerca de una ventana.",
+        "Muestra lo más llamativo en los primeros segundos: así la gente se queda viendo.",
+        "Habla cerca del teléfono, sin ruido de fondo, y agrega subtítulos: ayudan a entender aunque no haya sonido.",
+        "Publica con constancia, por ejemplo cada semana, y responde los comentarios.",
+        "Nunca compartas los códigos que te lleguen por mensaje, y no muestres tu dirección de casa ni documentos."
+      ],
+      problemas: [
+        { si: "Me escriben pidiendo dinero o prometiendo premios", haz: "Desconfía y no respondas." },
+        { si: "Alguien deja comentarios molestos", haz: "Puedes borrar el comentario o bloquear a esa persona." }
+      ],
+      dato: "¿No sabes qué grabar? Tu producto de cerca con el precio, cómo lo preparas, un antes y después, la respuesta a una pregunta de un cliente, tu historia o un consejo sobre lo que sabes hacer.",
+      laminas: [
+        { titulo: "TikTok para tu emprendimiento", archivo: "modulo7-tiktok-para-emprendedores.pdf", peso: "3.1 MB" }
+      ]
+    }
+  },
+  {
+    num: "viii",
+    titulo: "¿Es real o hecho con IA? Práctica en TikTok",
+    desc: "Aprende a reconocer fotos, videos y voces hechos con IA, pide ver menos y sube tu video de Edits a TikTok.",
+    temas: ["Contenido con IA", "Deepfake", "Para ti", "Publicar en privado"],
+    esNuevo: false,
+    contenido: {
+      resumen: "La inteligencia artificial puede crear fotos que nunca se tomaron, videos de personas que parecen reales y voces copiadas de gente de verdad. Como es rápido, gratis y emociona, las redes están llenas de este contenido, y a veces se usa para estafar. Aprendimos a reconocerlo y qué hacer en TikTok; después practicamos en la app: elegir qué videos ver y subir nuestro video de Edits como negocio, en privado.",
+      conceptosTitulo: "Señales de que puede ser IA",
+      conceptos: [
+        "<strong>En las imágenes</strong>: manos con dedos de más, letras y carteles raros, piel demasiado lisa, fondos deformados o todo demasiado perfecto, como una pintura.",
+        "<strong>En videos y voces</strong>: los labios no van con lo que dice, parpadea poco, la cara se ve borrosa en los bordes, la voz suena plana, como de robot, o se mueve rígido.",
+        "<strong>En la cuenta</strong>: es nueva, sin foto real ni contacto, y tiene muchos videos casi iguales, con la misma voz.",
+        "<strong>En el mensaje</strong>: pide dinero, claves o datos; mete prisa («¡Solo hoy!»); promete milagros o ganancias seguras, o no dice dónde pasó ni quién lo confirma.",
+        "<strong>Deepfake</strong>: un video o audio al que le cambian la cara o la voz a una persona real para hacerle decir lo que nunca dijo, como un famoso que «recomienda» una inversión o la voz de un familiar que pide dinero urgente.",
+        "<strong>La etiqueta</strong>: TikTok pide marcar lo hecho con IA y puede aparecer «Contenido generado por IA». Pero no todos la ponen: que no la tenga no quiere decir que sea real."
+      ],
+      actividades: [
+        {
+          titulo: "Comprobar si es verdad",
+          pasos: [
+            "Detente: ¿te da mucho miedo, rabia o emoción? Eso es lo que más se comparte sin pensar.",
+            "Mira quién lo publicó y desde cuándo tiene la cuenta.",
+            "Busca la noticia en un periódico, un canal de TV o un sitio oficial. Si aparece en varias fuentes confiables, es más probable que sea real.",
+            "Si nadie más lo confirma, <strong>no lo compartas</strong>."
+          ]
+        },
+        {
+          titulo: "Recorrer TikTok: búsqueda del tesoro",
+          pasos: [
+            "Mira 3 videos en <strong>Para ti</strong>: sube el dedo para pasar al siguiente.",
+            "Busca un tema con la <strong>lupa</strong>, arriba a la derecha.",
+            "Dale me gusta con el <strong>corazón</strong> y guarda un video con el <strong>marcador</strong>, debajo de los comentarios.",
+            "Comparte un video por WhatsApp con la <strong>flecha</strong>.",
+            "Toca la foto redonda para ver el perfil de quien lo hizo."
+          ]
+        },
+        {
+          titulo: "Enseñarle a TikTok lo que te interesa",
+          pasos: [
+            "TikTok es como un mesonero: aprende de lo que ves, sigues o rechazas.",
+            "Con la lupa, busca tu rubro: <em>#bisutería</em>, <em>#tortas</em>, <em>#costura</em>… y sigue 3 cuentas que te gusten.",
+            "En 2 videos que no te interesen, deja el dedo apretado y toca <strong>No me interesa</strong>.",
+            "Vuelve a Para ti: ¿cambiaron los videos?"
+          ]
+        },
+        {
+          titulo: "Ver menos videos hechos con IA",
+          aviso: "No bloquea toda la IA: le pide a TikTok que te muestre menos. Y elige <strong>Permanente</strong>, o el cambio vence a los 7 días.",
+          pasos: [
+            "En <strong>Perfil</strong>, toca las tres rayas, arriba a la derecha.",
+            "Toca <strong>Ajustes y privacidad → Preferencias de contenido → Gestionar temas</strong>.",
+            "Junto a <em>Contenido generado por IA</em>, toca <strong>Predeterminado</strong> y elige <strong>Menos</strong>.",
+            "Arriba, en <em>Establecer una duración</em>, elige <strong>Permanente</strong>."
+          ]
+        },
+        {
+          titulo: "Subir tu video de Edits, en privado",
+          pasos: [
+            "Toca <strong>+</strong>, abajo al centro, y luego el cuadrito de la galería, abajo a la izquierda. Si te pide permisos, toca <strong>Mientras la app está en uso</strong> y luego <strong>Permitir todo</strong>.",
+            "En <em>Vídeos</em>, toca tu video de Edits y luego <strong>Siguiente</strong>.",
+            "Se edita como en Edits: <strong>Aa</strong> para texto y, arriba, <em>Agregar sonido</em>. Si tu video ya los tiene, no toques nada.",
+            "Toca <strong>Siguiente</strong>, no <em>Tu Story</em>: esa opción lo publica de una vez para todos.",
+            "En <em>Agrega una descripción…</em> escribe qué vendes y cómo pedirlo: <em>«Collares hechos a mano. Pedidos por WhatsApp.»</em>",
+            "Toca <strong># Hashtags</strong> y pon tu rubro, tu ciudad y uno general: <em>#bisutería #Caracas #emprendimiento</em>.",
+            "Toca <em>Todo el mundo puede ver…</em>, elige <strong>Solo tú</strong> y toca <strong>Publicar</strong>."
+          ]
+        },
+        {
+          titulo: "Cuando estés listo: publicarlo para todos",
+          pasos: [
+            "En <strong>Perfil</strong>, toca el <strong>candado</strong>: ahí están tus videos privados.",
+            "Abre tu video y toca los tres puntos, a la derecha.",
+            "Toca <strong>Ajustes de privacidad</strong> y elige <strong>Todo el mundo</strong>.",
+            "No hay apuro: puede quedarse en privado hasta que te sientas seguro."
+          ]
+        }
+      ],
+      claves: [
+        "Regla de oro: si un video te pide <strong>dinero o datos</strong>, desconfía, sea IA o no.",
+        "Lo que da mucho miedo, rabia o promete milagros es lo que más se usa para engañar.",
+        "Ninguna señal es segura al 100 %: ante la duda, no lo compartas.",
+        "Una cura milagrosa que se vende por un enlace no es medicina: consulta a tu médico.",
+        "Si usaste IA en tu video, avísalo en <strong>Más opciones</strong> al publicar."
+      ],
+      problemas: [
+        { si: "Un video parece una estafa", haz: "Toca la flecha ↗, desliza la fila de opciones y toca <strong>Denunciar</strong>. Elige el motivo, por ejemplo <em>Información falsa</em>, y toca Enviar." },
+        { si: "Una cuenta me molesta o parece falsa", haz: "Toca su nombre o su foto, luego los tres puntos <strong>⋯</strong> de arriba y <strong>Bloquear</strong>. Confirma tocando Bloquear otra vez." },
+        { si: "TikTok avisa que mi cuenta es pública", haz: "No pasa nada: en el último paso eliges <strong>Solo tú</strong>." },
+        { si: "A la semana volvieron los videos con IA", haz: "El cambio quedó por 7 días. Repítelo y elige <strong>Permanente</strong>." }
+      ],
+      dato: "No todo lo hecho con IA es peligroso: un gatito que toca el piano con la etiqueta «Contenido generado por IA» simplemente no es real. El peligro es cuando se usa para pedirte dinero o datos.",
+      laminas: [
+        { titulo: "¿Es real o hecho con IA? · Teoría", archivo: "modulo8-contenido-hecho-con-ia.pdf", peso: "3.2 MB" },
+        { titulo: "TikTok para tu emprendimiento · Práctica", archivo: "modulo8-practica-tiktok.pdf", peso: "4.7 MB" }
+      ]
+    }
+  },
+  {
+    num: "ix",
+    titulo: "Muestra cómo lo haces: el video del proceso",
+    desc: "Planea 5 escenas, fija el teléfono arriba de la mesa y graba cómo haces tu producto, paso a paso.",
+    temas: ["Video de proceso", "Encuadre", "Luz", "Publicar"],
+    esNuevo: false,
+    contenido: {
+      resumen: "Un video de proceso muestra, paso a paso, cómo se hace tu producto. El teléfono queda quieto, apoyado arriba de la mesa, y en pantalla solo se ven tus manos y los materiales: no hace falta salir en cámara ni saber de edición. De ejemplo grabamos cómo se arma un collar de bisutería, pero sirve igual para pasteles, tejidos, velas o cualquier cosa hecha a mano.",
+      conceptosTitulo: "Por qué funciona",
+      conceptos: [
+        "<strong>Confianza</strong>: el cliente ve que de verdad lo haces tú.",
+        "<strong>Valor</strong>: se nota el tiempo y el cuidado de un trabajo hecho a mano.",
+        "<strong>Atrae</strong>: mucha gente se queda viendo hasta llegar al resultado final.",
+        "<strong>Responde dudas</strong>: se ven los materiales y el tamaño real. Y pocos negocios muestran cómo trabajan.",
+        "<strong>En 3 partes</strong>: empieza con el producto terminado, sigue con el proceso y cierra con el precio y el contacto. Para el primero, de 15 a 60 segundos está bien."
+      ],
+      actividades: [
+        {
+          titulo: "Planear las 5 escenas",
+          pasos: [
+            "En un papel, escribe o dibuja 5 escenas en el orden en que las vas a grabar.",
+            "Con el collar quedaron así: <strong>1</strong> los materiales sobre la mesa (cuentas, hilo, broche, tijeras y pinzas), <strong>2</strong> enhebrar las cuentas, <strong>3</strong> colocar el broche, <strong>4</strong> el collar terminado y <strong>5</strong> el precio y el contacto.",
+            "Con el plan en la mano sabes qué mostrar y en qué orden."
+          ]
+        },
+        {
+          titulo: "Preparar el lugar",
+          pasos: [
+            "Fija el teléfono <strong>arriba de la mesa, mirando hacia abajo</strong>, bien quieto, para que no se mueva ni se caiga. Sirve un trípode o un soporte, una pila de libros, una taza alta, una lámpara de brazo con una pinza firme o una caja.",
+            "Ponlo <strong>vertical</strong>, como para TikTok o Instagram. Revisa que se vean tus manos y todos los materiales, con un poco de espacio libre en los bordes.",
+            "Graba de día, junto a una ventana, con la luz <strong>de un lado</strong>, no de atrás. De noche, usa una lámpara de luz blanca.",
+            "Pon una tela o un mantel liso, de un color que contraste con tus piezas, y quita de la mesa todo lo que no sea del trabajo.",
+            "Haz una prueba corta y mira cómo se ve."
+          ]
+        },
+        {
+          titulo: "Grabar",
+          pasos: [
+            "Limpia el lente con un paño suave y activa <strong>No molestar</strong> para que no entren llamadas.",
+            "Abre la cámara, revisa el encuadre, toca el círculo rojo y espera 3 segundos antes de empezar.",
+            "Muévete despacio y muestra cada paso durante unos segundos. No pases la mano por delante del lente.",
+            "Si hablas, hazlo claro y cerca del teléfono; si no, después le agregas texto."
+          ]
+        },
+        {
+          titulo: "Revisar y publicar",
+          pasos: [
+            "Mira el video completo: ¿se ve y se oye bien?",
+            "Recorta lo que sobra al inicio y al final, por ejemplo en Edits, como en el <strong>módulo vi</strong>.",
+            "Agrega un texto con el nombre del producto y el precio.",
+            "Al publicar, escribe una descripción, tu contacto y 3 hashtags."
+          ]
+        }
+      ],
+      claves: [
+        "Planea las 5 escenas antes de grabar.",
+        "Teléfono quieto, arriba de la mesa, mirando hacia abajo.",
+        "Luz de día desde un lado y fondo ordenado.",
+        "Muestra cada paso con calma.",
+        "Termina siempre con el precio y cómo contactarte."
+      ],
+      problemas: [
+        { si: "Sale una sombra sobre el trabajo", haz: "Tu mano o el teléfono tapan la luz. Cambia la luz de lado: debe venir de un costado, no de atrás." },
+        { si: "La imagen se ve borrosa", haz: "Limpia el lente con un paño suave." },
+        { si: "No se ven todos los materiales", haz: "Sube o aleja el teléfono hasta que todo quepa, con un poco de espacio en los bordes." }
+      ],
+      dato: "Un solo video de proceso sirve para varias redes: lo puedes subir a TikTok, a Instagram y a tus estados de WhatsApp.",
+      laminas: [
+        { titulo: "Muestra cómo lo haces: el video del proceso", archivo: "modulo9-video-del-proceso.pdf", peso: "4.7 MB" }
+      ]
+    }
+  },
+  {
+    num: "x",
+    titulo: "Un segundo candado para tus redes: verificación en dos pasos",
+    desc: "Activa la verificación en dos pasos en Instagram y TikTok con Google Authenticator, para que nadie más entre a tu cuenta.",
+    temas: ["Seguridad", "Google Authenticator", "Instagram", "TikTok"],
+    esNuevo: false,
+    contenido: {
+      resumen: "Tu contraseña es la llave de tu cuenta, pero una llave se puede robar, adivinar o filtrar. La verificación en dos pasos le pone un segundo candado: además de la contraseña, para entrar hace falta un código de 6 números que aparece en tu teléfono. Así evitas que alguien pida dinero a tu familia en tu nombre o que pierdas tus fotos y tus contactos. En esta clase la activamos en Instagram y TikTok con la app Google Authenticator.",
+      conceptosTitulo: "Lo que hay que saber",
+      conceptos: [
+        "<strong>La llave y el cerrojo</strong>: la llave es tu contraseña de siempre; el cerrojo, un código que aparece en tu teléfono. Para entrar se necesitan las dos.",
+        "<strong>Por qué ya no basta la contraseña</strong>: alguien la ve o te la pide (robada), es fácil, como 123456 (adivinada), o se escapa de una página atacada (filtrada).",
+        "<strong>Phishing</strong>: un mensaje trampa que imita a Instagram, a TikTok o al banco para pedirte la contraseña.",
+        "<strong>Por qué una app y no un SMS</strong>: funciona sin señal de teléfono, el código cambia cada 30 segundos y es más difícil de robar.",
+        "<strong>Códigos de respaldo</strong>: las llaves de repuesto de tu cuenta, por si pierdes el teléfono."
+      ],
+      actividades: [
+        {
+          titulo: "Instalar Google Authenticator",
+          pasos: [
+            "Abre <strong>Play Store</strong> (en iPhone, <strong>App Store</strong>), busca <em>Google Authenticator</em> y toca <strong>Instalar</strong> (u <strong>Obtener</strong>).",
+            "Ábrela y toca <strong>Comenzar</strong>.",
+            "Entra con tu cuenta de Google: así se guarda una copia de tus códigos. Si no tienes, elige <strong>Usar sin una cuenta</strong>."
+          ]
+        },
+        {
+          titulo: "Activarlo en Instagram",
+          pasos: [
+            "Toca tu foto, abajo a la derecha, y luego las <strong>tres rayas ☰</strong>, arriba a la derecha.",
+            "Toca <strong>Centro de cuentas</strong> (está arriba, en un recuadro) y luego <strong>Contraseña y seguridad</strong>.",
+            "Toca <strong>Autenticación en dos pasos</strong> y elige tu cuenta de Instagram.",
+            "Elige <strong>App de autenticación</strong>, la recomendada, y toca <strong>Siguiente</strong>.",
+            "Toca <strong>Copiar clave</strong>. Así no tienes que escribirla.",
+            "Abre Google Authenticator, toca <strong>+</strong> y elige <strong>Ingresar una clave de configuración</strong>. Escribe <em>Instagram</em>, pega la clave y toca <strong>Agregar</strong>.",
+            "Vuelve a Instagram y escribe los 6 números que muestra Authenticator.",
+            "Copia en papel los <strong>códigos de respaldo</strong> y guárdalos en un lugar seguro. Toca <strong>Listo</strong>: tu Instagram ya tiene segundo candado."
+          ]
+        },
+        {
+          titulo: "Activarlo en TikTok",
+          pasos: [
+            "Toca <strong>Perfil</strong>, abajo a la derecha, luego las <strong>tres rayas ☰</strong> y <strong>Ajustes y privacidad</strong>.",
+            "Toca <strong>Seguridad</strong> y luego <strong>Verificación en dos pasos</strong>.",
+            "Marca <strong>App de autenticación</strong> y una más (SMS o correo) y toca <strong>Activar</strong>.",
+            "Toca <strong>Copiar</strong> y pega la clave en Authenticator igual que con Instagram: <strong>+ → Ingresar una clave</strong>, y escribe <em>TikTok</em>.",
+            "Vuelve a TikTok, escribe los 6 números y confirma. ¡Listo!"
+          ]
+        },
+        {
+          titulo: "Entrar con el segundo candado",
+          pasos: [
+            "Escribe tu contraseña, como siempre.",
+            "Abre Google Authenticator y mira los 6 números de esa cuenta.",
+            "Escríbelos antes de que cambien."
+          ]
+        }
+      ],
+      claves: [
+        "Tu código es solo tuyo: <strong>nunca</strong> se lo des a nadie.",
+        "Ninguna empresa te va a llamar para pedírtelo. Si alguien te lo pide, es una trampa.",
+        "Escribe los códigos de respaldo a mano, en papel, guárdalos con tus documentos importantes y no se los des a nadie.",
+        "Los pasos son iguales en Android y en iPhone.",
+        "¿Dudas? Pregúntale a un familiar de confianza."
+      ],
+      problemas: [
+        { si: "El número cambió antes de escribirlo", haz: "Escribe el nuevo. Cambia cada 30 segundos y no pasa nada." },
+        { si: "No veo Centro de cuentas en Instagram", haz: "Desliza el dedo hacia arriba en el menú: está en un recuadro." },
+        { si: "En TikTok no dice Seguridad", haz: "En algunos teléfonos dice <strong>Seguridad y permisos</strong>." },
+        { si: "La app pide permiso para la cámara", haz: "En Android, toca <strong>Mientras se usa la app</strong>; en iPhone, <strong>Permitir</strong>." },
+        { si: "Perdí el teléfono", haz: "Entra con un código de respaldo, instala Google Authenticator en el teléfono nuevo y activa otra vez el segundo candado. Si entraste a Authenticator con Google, los códigos vuelven solos." }
+      ],
+      dato: "Casi siempre el código solo se pide cuando entras desde un teléfono nuevo. En el día a día, tu cuenta abre como siempre, pero un ladrón con tu contraseña se queda en la puerta.",
+      laminas: [
+        { titulo: "Proteja sus redes con un segundo candado", archivo: "modulo10-verificacion-en-dos-pasos.pdf", peso: "6.6 MB" }
+      ]
+    }
   }
 ];
