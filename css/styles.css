@@ -2072,6 +2072,8 @@ body.nav-compacta .brand-text small { display: none; }
   color: var(--tinta-soft);
 }
 .nivel-aviso strong { color: var(--vinotinto); }
+.nivel-aviso + .nivel-aviso { margin-top: -20px; }
+.nivel-aviso a { color: var(--vinotinto); font-weight: 600; }
 
 .modulo-ancho { grid-column: 1 / -1; }
 /* Que ningún bloque ensanche la columna en pantallas angostas (palabras largas, etiquetas) */

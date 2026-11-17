@@ -697,5 +697,167 @@ const MODULOS_N3 = [
         { titulo: "Proteja sus redes con un segundo candado", archivo: "modulo10-verificacion-en-dos-pasos.pdf", peso: "6.6 MB" }
       ]
     }
+  },
+  {
+    num: "xi",
+    titulo: "Identidad en redes: tu enlace de WhatsApp y tu página de enlaces",
+    desc: "Haz que tu negocio se vea igual en todas las redes, arma tu enlace directo de WhatsApp y tu página en Linktree.",
+    temas: ["Perfil", "Bio", "Enlace de WhatsApp", "Linktree"],
+    esNuevo: false,
+    contenido: {
+      resumen: "El cliente te busca en varios sitios: ve tu flyer, te busca en Instagram, te ve en TikTok y te escribe por WhatsApp. En cada uno tiene que reconocer tu negocio al primer vistazo. En esta clase ordenamos el perfil para que se vea igual en todas las redes, armamos el enlace directo de WhatsApp y creamos una página de enlaces en Linktree que lleva a todo, para ponerla en la bio.",
+      conceptosTitulo: "Los 4 elementos del perfil",
+      conceptos: [
+        "<strong>Nombre de usuario</strong>: fácil de decir y de escribir, como <em>@dulcesmaria</em>. Si está ocupado, agrégale la ciudad: <em>@dulcesmaria.ccs</em>. La prueba: díctalo por teléfono; si lo escriben bien a la primera, sirve.",
+        "<strong>Foto de perfil</strong>: tu logo, el mismo en todas las redes y centrado, porque lo recortan en círculo. Si no tienes logo, una foto clara de tu producto estrella.",
+        "<strong>Bio en 4 partes</strong>: qué vendes, a quién, dónde y cómo pedir. Por ejemplo: «Tortas para cumpleaños y reuniones. Delivery en Caracas. Pida por WhatsApp aquí abajo».",
+        "<strong>Un solo enlace</strong>: una página de enlaces junta tu WhatsApp, tus redes y tu catálogo. Es como una tarjeta de presentación con botones.",
+        "<strong>Enlace directo de WhatsApp</strong>: con el número, el cliente tiene que copiarlo, guardarlo, buscarlo y escribir; con el enlace, lo toca y se abre el chat. Se arma así: <code>wa.me/58</code> + tu número sin el 0."
+      ],
+      actividades: [
+        {
+          titulo: "Tu ficha de identidad, en papel",
+          pasos: [
+            "Escribe tu nombre de usuario y uno de reserva.",
+            "Escribe tu bio: qué vendes, a quién, dónde y cómo pedir.",
+            "Anota los botones de tu página (4 o 5): WhatsApp primero, después tus redes, tu catálogo y, si atiendes en un local, la ubicación o el horario.",
+            "Escribe tu número con 58 adelante y sin el 0, y el mensaje que quieres recibir de tus clientes.",
+            "Léele tu bio a un compañero: ¿entiende qué vendes?"
+          ]
+        },
+        {
+          titulo: "Tu enlace de WhatsApp a mano",
+          pasos: [
+            "Abre las <strong>Notas</strong> del celular.",
+            "Escribe <code>wa.me/58</code> y tu número sin el 0. Por ejemplo, <em>0412-379.00.00</em> queda <code>wa.me/584123790000</code>. No hace falta escribir https://.",
+            "Cópialo y envíaselo a un compañero por WhatsApp.",
+            "El compañero toca el enlace azul y, si pregunta, toca <strong>Continuar</strong>: se abre el chat contigo."
+          ]
+        },
+        {
+          titulo: "Tu enlace con el mensaje ya escrito",
+          aviso: "La página del generador está en inglés. Al lado de cada botón va la traducción.",
+          pasos: [
+            "Abre el generador <strong>WhatsApp Link Generator for Venezuela</strong> (en clase lo abrimos con el código QR de la lámina).",
+            "En <strong>Phone Number</strong> (número) ya viene el +58: escribe tu número sin el 0.",
+            "En <strong>Message</strong> (mensaje) escribe el de tu ficha, por ejemplo <em>Hola, vi su página y quiero información</em>, y toca <strong>Generate Link</strong> (generar enlace).",
+            "Abajo sale <strong>YOUR WHATSAPP LINK</strong>: cópialo con los dos cuadritos y pégalo en tus Notas. Con <strong>Open in WhatsApp</strong> pruebas que el mensaje sale ya escrito."
+          ]
+        },
+        {
+          titulo: "Tu página en Linktree",
+          aviso: "<strong>Aquí no se paga.</strong> Cuando ofrezca la «prueba gratuita de Pro», toca <strong>Omite</strong> y deja marcado el plan <strong>Free</strong>: el botón morado cobra USD 15 al mes después de 7 días.",
+          pasos: [
+            "En <strong>Play Store</strong> (o App Store) busca <em>Linktree</em>, instálala, ábrela y toca <strong>Regístrate</strong>. Lo más fácil es <strong>Continúa con Google</strong>.",
+            "Escribe el nombre de usuario de tu ficha: tu página queda <em>linktr.ee/tunombre</em>. Toca <strong>Continúa</strong> y, en tu objetivo, elige <strong>Negocio</strong>.",
+            "Las ventanas que estorban se saltan: elige un color o toca <strong>Omite</strong>, en notificaciones toca <strong>Ahora no</strong> y cierra los avisos con la <strong>X</strong>.",
+            "Toca tu nombre arriba: en <strong>Título</strong> pon el nombre del negocio y en <strong>Bio</strong> la de tu ficha (borra la que viene en inglés). Toca <strong>Guarda</strong>.",
+            "Toca <strong>+ Añade</strong>, pega tu enlace de WhatsApp y toca el resultado que dice <em>Enlace · wa.me</em>. Ponle de título <em>WhatsApp</em>: sin título, el botón no funciona.",
+            "Toca los iconos grises debajo de la bio, elige Instagram o TikTok, escribe tu @usuario y toca <strong>Agrega</strong>.",
+            "Deja el dedo apretado sobre el botón de WhatsApp y arrástralo arriba de todos.",
+            "Mira la <strong>Vista previa</strong> (los ojitos), toca <strong>Comparte</strong> y copia tu <em>linktr.ee/…</em> con los dos cuadritos."
+          ]
+        },
+        {
+          titulo: "Ponerla en tus redes",
+          pasos: [
+            "<strong>Instagram</strong>: Perfil → <strong>Editar perfil</strong> → <strong>Enlaces</strong> → <strong>Agregar enlace</strong>. En URL pega tu linktr.ee, de título pon <em>Pedidos</em> y confirma. En <em>Presentación</em> va la bio de tu ficha.",
+            "<strong>TikTok</strong>: Perfil → <strong>Agregar descripción</strong> (o el lápiz). Escribe tu bio y, al final, tu linktr.ee. Toca <strong>Guardar</strong>.",
+            "Prueba en parejas: abre la página del compañero, toca su botón de WhatsApp y revisa que abra su chat y que se entienda qué vende."
+          ]
+        }
+      ],
+      claves: [
+        "Los 4 elementos (usuario, foto, bio y enlace), <strong>iguales</strong> en Instagram, TikTok y Facebook.",
+        "En la página de enlaces, entre 4 y 5 botones, con WhatsApp de primero: ahí es donde se vende.",
+        "El enlace de WhatsApp: 58 adelante, sin el 0, sin +, sin espacios, guiones ni puntos.",
+        "«Prueba Pro gratis» aparece en muchas pantallas de Linktree: siempre se ignora.",
+        "Tu linktr.ee va en flyers, tarjetas y estados de WhatsApp. Guárdalo en tus Notas."
+      ],
+      problemas: [
+        { si: "El enlace de WhatsApp no abre el chat", haz: "Revisa que tenga <strong>58</strong> adelante, que no tenga el 0 y que no haya espacios ni guiones." },
+        { si: "En Linktree pegué el enlace y no pasó nada", haz: "Hay que tocar el resultado que aparece debajo, el que dice <em>Enlace · wa.me</em>." },
+        { si: "Linktree me pide conectar Instagram", haz: "No toques «Conecta Instagram»: pide iniciar sesión y complica todo. Basta con escribir tu @usuario en el icono." },
+        { si: "En TikTok el enlace no se puede tocar", haz: "Es normal: en TikTok sale como texto. Para que se pueda tocar hacen falta 1.000 seguidores o una cuenta de empresa registrada." }
+      ],
+      dato: "En la versión gratis de Linktree aparece su logo al pie de tu página. Es normal, y puedes poner todos los botones que quieras sin pagar. En <strong>Comparte</strong> también te da un <strong>código QR</strong> de tu página para ponerlo en tu flyer.",
+      laminas: [
+        { titulo: "Identidad en redes · Teoría", archivo: "modulo11-teoria-identidad-en-redes.pdf", peso: "3.6 MB" },
+        { titulo: "Tu enlace de WhatsApp y tu Linktree · Práctica", archivo: "modulo11-practica-whatsapp-linktree.pdf", peso: "9 MB" }
+      ]
+    }
+  },
+  {
+    num: "xii",
+    titulo: "WhatsApp Business para tu emprendimiento",
+    desc: "Conoce el WhatsApp de los negocios: perfil de empresa, catálogo, respuestas rápidas, mensajes automáticos y etiquetas.",
+    temas: ["WhatsApp Business", "Catálogo", "Mensajes automáticos", "Etiquetas"],
+    esNuevo: false,
+    contenido: {
+      resumen: "WhatsApp Business es una aplicación gratuita pensada para negocios pequeños. Se descarga aparte del WhatsApp normal y se usa casi igual (chats, fotos, audios y llamadas), pero agrega herramientas para atender y organizar a tus clientes. En esta clase vimos en qué se diferencia del WhatsApp normal, qué le aporta a un emprendedor y cómo instalarlo y configurarlo, con el ejemplo de «Joyería Lupita».",
+      conceptosTitulo: "WhatsApp normal frente a Business",
+      conceptos: [
+        "<strong>Para qué se usa</strong>: el normal, para hablar con familia y amigos; Business, para atender a los clientes de un negocio.",
+        "<strong>Perfil</strong>: el normal tiene nombre, foto y una frase; Business suma dirección, horario, descripción y correo.",
+        "<strong>Catálogo</strong>: solo Business. Tus productos con foto, nombre y precio, como una tienda pequeña dentro de WhatsApp.",
+        "<strong>Mensajes automáticos</strong>: solo Business. Saludo para quien te escribe por primera vez, ausencia fuera de tu horario y respuestas rápidas con un atajo.",
+        "<strong>Etiquetas</strong>: ordenan tus chats, por ejemplo <em>Pedido nuevo</em>, <em>Pago pendiente</em>, <em>Pedido listo</em> o <em>Cliente frecuente</em>. Las dos apps son gratis."
+      ],
+      actividades: [
+        {
+          titulo: "Descargar WhatsApp Business",
+          aviso: "Hay apps parecidas de otros creadores. La oficial dice <strong>WhatsApp LLC</strong> y tiene el ícono verde con una <strong>B</strong>.",
+          pasos: [
+            "Abre la <strong>Play Store</strong>, el triángulo de colores (en iPhone, la <strong>App Store</strong>).",
+            "Toca la barra de búsqueda y escribe <em>WhatsApp Business</em>.",
+            "Elige la que dice <strong>WhatsApp LLC</strong>, con el ícono verde y una B.",
+            "Toca <strong>Instalar</strong> y luego <strong>Abrir</strong>."
+          ]
+        },
+        {
+          titulo: "Registrar el número",
+          aviso: "Un número solo puede estar en una app a la vez. Si usas el mismo de tu WhatsApp normal, esa cuenta pasa a ser Business y tu familia también la verá como negocio. Para tener las dos, necesitas otro número: un segundo chip o un teléfono con doble SIM.",
+          pasos: [
+            "Toca <strong>Aceptar y continuar</strong>.",
+            "Escribe el número de teléfono del negocio.",
+            "Te llegará un código por mensaje: escríbelo en la app. <strong>Nunca</strong> compartas ese código con nadie."
+          ]
+        },
+        {
+          titulo: "Configurar tu negocio",
+          pasos: [
+            "Toca los <strong>tres puntos</strong>, arriba a la derecha, y luego <strong>Herramientas para la empresa</strong>.",
+            "Entra a <strong>Perfil de la empresa</strong>: pon qué vendes, tu horario, la dirección o el correo si los tienes, y tu logo o una foto clara como imagen.",
+            "Entra a <strong>Catálogo</strong> y agrega tu primer producto con foto, nombre y precio. Puedes sumarle una descripción y un enlace.",
+            "Entra a <strong>Mensaje de saludo</strong> y a <strong>Mensaje de ausencia</strong>, escribe el texto, guarda y listo."
+          ]
+        },
+        {
+          titulo: "Respuestas rápidas y etiquetas",
+          pasos: [
+            "En <strong>Respuestas rápidas</strong> guarda los mensajes que repites mucho (precios, horario, envíos) y ponles un atajo, por ejemplo <code>/precio</code>.",
+            "En un chat escribe <code>/</code>: aparecen tus atajos. Toca el que necesitas y se escribe solo.",
+            "Para etiquetar, deja el dedo apretado sobre un chat, toca los tres puntos y luego <strong>Etiquetar chat</strong>. Elige una, como <em>Pedido nuevo</em>.",
+            "Después puedes ver solo los chats que tienen esa etiqueta."
+          ]
+        }
+      ],
+      claves: [
+        "Descarga solo la app de <strong>WhatsApp LLC</strong>.",
+        "El código de verificación no se comparte nunca, ni con quien diga ser de WhatsApp.",
+        "Confirma el pago en tu cuenta antes de entregar: hay comprobantes falsos.",
+        "Escribe solo a quien te pidió información. Si mandas mensajes masivos, te pueden bloquear.",
+        "No abras enlaces de desconocidos ni de premios."
+      ],
+      problemas: [
+        { si: "No quiero que mi familia me vea como negocio", haz: "Usa WhatsApp Business con otro número (un segundo chip o un teléfono con doble SIM) y deja tu número de siempre en el WhatsApp normal." },
+        { si: "Me arrepentí de pasar mi número a Business", haz: "Se puede volver al WhatsApp normal, pero el catálogo no se pasa." },
+        { si: "Solo puedo usar el WhatsApp normal", haz: "Pon tu logo de foto, escribe en <strong>Info</strong> qué vendes y tu horario, publica tus productos con precio en los <strong>Estados</strong>, avisa a tus clientes con una <strong>lista de difusión</strong> y fija arriba los chats de pedidos pendientes." }
+      ],
+      dato: "WhatsApp Business también arma solo tu <strong>enlace directo</strong> y tu <strong>código QR</strong>, sin tener que escribirlos a mano como en el <strong>módulo xi</strong>.",
+      laminas: [
+        { titulo: "WhatsApp Business para tu emprendimiento", archivo: "modulo12-whatsapp-business.pdf", peso: "3.6 MB" }
+      ]
+    }
   }
 ];
