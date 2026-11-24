@@ -859,5 +859,71 @@ const MODULOS_N3 = [
         { titulo: "WhatsApp Business para tu emprendimiento", archivo: "modulo12-whatsapp-business.pdf", peso: "3.6 MB" }
       ]
     }
+  },
+  {
+    num: "xiii",
+    titulo: "Habla con la IA y arma collages de tus productos",
+    desc: "Conversa con Gemini usando tu voz, como en una llamada, y une varias fotos de tus productos en un solo collage.",
+    temas: ["Gemini Live", "Voz", "Collage", "Canva"],
+    esNuevo: false,
+    contenido: {
+      resumen: "Esta clase tuvo dos partes. En la primera hablamos con Gemini usando solo la voz, como en una llamada telefónica: sin escribir, le pedimos ideas de promociones, nombres y precios, y hasta le pedimos que hiciera de cliente para ensayar una venta. En la segunda armamos collages: varias fotos de tus productos en una sola imagen con nombre, precio y WhatsApp, lista para enviar a tus clientes o subir a tus estados. Los hicimos en Canva, en las historias de Instagram y en TikTok.",
+      conceptosTitulo: "Lo que hay que saber",
+      conceptos: [
+        "<strong>IA por voz</strong>: es como hacer una llamada. Tú hablas, la IA escucha y te responde al instante. Puedes hacerle preguntas como a un socio.",
+        "<strong>Cómo hablarle</strong>: claro, como a un vecino, y diciéndole cuál es tu negocio («Tengo una panadería»). Si habla mucho, interrúmpela. Y si no entiendes, pídele: <em>«Explícamelo con palabras muy sencillas»</em>.",
+        "<strong>Para qué le sirve a tu negocio</strong>: ideas de productos, nombres y promociones, mensajes amables para tus clientes, cuánto cobrar restando lo que gastas y respuestas educadas a un cliente molesto.",
+        "<strong>Un collage</strong> reúne varias fotos en una sola imagen: llama la atención, muestra varios productos sin llenar el chat de fotos y sirve para el «antes y después».",
+        "<strong>Tres formas de hacerlo</strong>: con una plantilla de Canva, con <em>Layout</em> en las historias de Instagram (de 2 a 4 fotos) o con el <em>modo foto</em> de TikTok, donde los clientes deslizan las fotos."
+      ],
+      actividades: [
+        {
+          titulo: "Conversar con Gemini usando tu voz",
+          pasos: [
+            "Abre la app <strong>Gemini</strong>: el ícono es una estrella azul y violeta.",
+            "Abajo a la derecha, toca el ícono de <strong>ondas</strong> (Gemini Live) para empezar la conversación por voz.",
+            "Para calentar, salúdala: <em>«Hola, me llamo [tu nombre] y quiero saludarte»</em>.",
+            "Pregúntale por tu negocio: <em>«Tengo un negocio de [tu rubro]. ¿Qué promoción puedo hacer este fin de semana?»</em>. Después pídele 2 ideas más sencillas de hacer.",
+            "Ensaya una venta: <em>«Por favor, actúa como un cliente interesado en mis productos»</em>. Deja que te pregunte por precios y entregas, y respóndele.",
+            "Cuando termines, toca el botón para colgar."
+          ]
+        },
+        {
+          titulo: "Tu collage en Canva",
+          pasos: [
+            "Abre la app <strong>Canva</strong> y, en el buscador de arriba, escribe <em>Collage 3 fotos</em>. Elige una plantilla <strong>sin corona</strong>.",
+            "Toca una foto de muestra, abajo toca <strong>Reemplazar</strong> y elige la foto de tu producto: se acomoda sola en el cuadro. Repite con las demás.",
+            "Toca dos veces un texto para cambiarlo: arriba el nombre de tu negocio, debajo de cada foto el precio y, al pie, tu WhatsApp.",
+            "Agrega una frase corta, como <em>«¡Oferta especial de fin de semana!»</em>, y revisa que todo se vea ordenado.",
+            "Toca <strong>Compartir → Descargar</strong>: la imagen queda en tu galería, lista para enviarla por WhatsApp o subirla a tus estados."
+          ]
+        },
+        {
+          titulo: "Collages sin Canva: Instagram y TikTok",
+          pasos: [
+            "<strong>Instagram</strong>: abre la cámara de historias (desliza hacia la derecha), toca <strong>Layout</strong>, elige de 2 a 4 fotos de tus productos y guárdala en tu teléfono o publícala en tu historia.",
+            "<strong>TikTok</strong>: toca el <strong>+</strong> del centro, luego <strong>Cargar</strong>, y elige varias fotos de tu negocio.",
+            "Elige el <strong>modo foto</strong>, para que tus clientes deslicen las imágenes, agrega una música suave y publica."
+          ]
+        }
+      ],
+      claves: [
+        "<strong>Nunca</strong> le des a la IA contraseñas, claves bancarias, tu cédula ni números de cuenta.",
+        "La IA se equivoca: revisa siempre las cuentas y los precios que te dé. La decisión final es tuya.",
+        "Gemini por voz necesita internet, pero lo básico es gratis: no hace falta pagar ni poner una tarjeta.",
+        "En el collage usa <strong>tus propias fotos</strong>: el cliente quiere ver tu producto real.",
+        "Pocas palabras, letras oscuras sobre fondo claro, y siempre tu precio y tu WhatsApp a la vista.",
+        "Toma las fotos cerca de una ventana, con un fondo limpio y el lente limpio."
+      ],
+      problemas: [
+        { si: "Gemini habla mucho o no le entiendo", haz: "Interrúmpela hablando, o pídele: «Explícamelo con palabras muy sencillas»." },
+        { si: "La plantilla de Canva tiene corona", haz: "Es de pago: busca otra parecida que no la tenga." }
+      ],
+      dato: "Un collage con tres productos y sus precios ocupa un solo mensaje. Si en vez de eso mandas tres fotos sueltas, llenas el chat de tu cliente.",
+      laminas: [
+        { titulo: "Conversaciones por voz con IA (Gemini)", archivo: "modulo13-gemini-por-voz.pdf", peso: "0.2 MB" },
+        { titulo: "Collages de fotos con Canva, Instagram y TikTok", archivo: "modulo13-collages-canva-instagram-tiktok.pdf", peso: "0.2 MB" }
+      ]
+    }
   }
 ];
